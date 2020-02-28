@@ -63,28 +63,34 @@ export default {
       masonryGrid: {
         cards: [
           {
-            link: "https://www.maxar/com",
+            link: "https://www.maxar.com",
             linkIsExternal: true,
-            imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/641/new_vricon_img.jpg',
-            heading: 'New era in geospatial information and OEM data privacy',
-            copy: '<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>',
-            linkText: 'Learn more'
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/641/new_vricon_img.jpg",
+            heading: "New era in geospatial information and OEM data privacy",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkText: "Learn more"
           },
-                    {
-            link: "https://www.maxar/com",
+          {
+            link: "https://www.maxar.com",
             linkIsExternal: true,
-            imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/642/Reuters_Myanmar_Investigates.jpg',
-            heading: 'New era in geospatial information and OEM data privacy',
-            copy: '<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>',
-            linkText: 'Learn more'
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/642/Reuters_Myanmar_Investigates.jpg",
+            heading: "New era in geospatial information and OEM data privacy",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkText: "Learn more"
           },
-                    {
-            link: "https://www.maxar/com",
+          {
+            link: "https://www.maxar.com",
             linkIsExternal: true,
-            imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/643/200129_Maxar_09-0130.jpg',
-            heading: 'New era in geospatial information and OEM data privacy',
-            copy: '<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>',
-            linkText: 'Learn more'
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/643/200129_Maxar_09-0130.jpg",
+            heading: "New era in geospatial information and OEM data privacy",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkText: "Learn more"
           }
         ]
       }
