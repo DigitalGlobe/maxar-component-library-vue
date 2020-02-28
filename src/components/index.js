@@ -1,8 +1,10 @@
 import Vue from "vue";
 import Hero from "./Hero.vue";
+import HeadlineCopy from "./HeadlineCopy.vue";
 
 const Components = {
-    Hero
+    Hero,
+    HeadlineCopy
 }
 
 Object.keys(Components).forEach(name => {
