@@ -1,0 +1,43 @@
+// Use this to style links that look like buttons
+
+// TODO: Jake will give final buton styles
+
+button,
+input[type="submit"],
+.button {
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color_primary_brand;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  padding: 8px 32px;
+  &:focus,
+  &:hover {
+    background-color: $color_primary_brand;
+    color: white;
+  }
+  &.gold_grey {
+    background-color: $color_primary_brand;
+    border-color: $color_grey;
+    color: $color_grey;
+    &:hover,
+    &:focus {
+      background-color: $color_grey;
+      color: white;
+    }
+  }
+}
+
+.dark_grey {
+  .button,
+  input[type="submit"],
+  button {
+    color: white;
+  }
+}

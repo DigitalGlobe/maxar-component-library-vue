@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+    box-sizing: border-box;
+    margin: 0;
+    padding: $half_space $mobile_side_space;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    @media (min-width: 768px) {
+      padding: $half_space $base_side_space;
+    }
+    &.dark_grey {
+      background-color: $color_dark_grey;
+      color: white;
+    }
+  
+    &.light_grey {
+      background-color: $color_extra_light_grey;
+    }
+  }
+  
