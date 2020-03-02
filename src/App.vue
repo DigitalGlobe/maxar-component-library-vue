@@ -6,6 +6,7 @@
     <HeadlineCopy :headlineCopy="headlineCopy3" />
     <MasonryGrid :masonryGrid="masonryGrid" />
     <ThreeQuarters :threeQuarters="threeQuarters" />
+    <TwoColumn :twoColumn="twoColumn" />
   </div>
 </template>
 
@@ -14,13 +15,16 @@ import Hero from "./components/Hero.vue";
 import HeadlineCopy from "./components/HeadlineCopy.vue";
 import MasonryGrid from "./components/MasonryGrid.vue";
 import ThreeQuarters from "./components/ThreeQuarters.vue";
+import TwoColumn from "./components/TwoColumn.vue";
+
 export default {
   name: "App",
   components: {
     Hero,
     HeadlineCopy,
     MasonryGrid,
-    ThreeQuarters
+    ThreeQuarters,
+    TwoColumn
   },
   data: function() {
     return {
@@ -107,6 +111,16 @@ export default {
         buttonLink: "https://maxar.com",
         linkIsExternal: true,
         buttonText: "Learn more"
+      },
+      twoColumn: {
+        headline: "Making history",
+        subheadEnabled: true,
+        copy: "<p>Explore the pivotal milestones that have helped us make so many customer missions and applications possible.</p>",
+        buttonEnabled: true,
+        buttonLink: "https://www.maxar.com",
+        buttonIsExternal: true,
+        buttonText: "Learn more",
+        imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
       }
     };
   }
