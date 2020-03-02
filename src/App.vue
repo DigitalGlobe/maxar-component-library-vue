@@ -5,6 +5,7 @@
     <HeadlineCopy :headlineCopy="headlineCopy2" />
     <HeadlineCopy :headlineCopy="headlineCopy3" />
     <MasonryGrid :masonryGrid="masonryGrid" />
+    <ThreeQuarters :threeQuarters="threeQuarters" />
   </div>
 </template>
 
@@ -12,12 +13,14 @@
 import Hero from "./components/Hero.vue";
 import HeadlineCopy from "./components/HeadlineCopy.vue";
 import MasonryGrid from "./components/MasonryGrid.vue";
+import ThreeQuarters from "./components/ThreeQuarters.vue";
 export default {
   name: "App",
   components: {
     Hero,
     HeadlineCopy,
-    MasonryGrid
+    MasonryGrid,
+    ThreeQuarters
   },
   data: function() {
     return {
@@ -93,6 +96,17 @@ export default {
             linkText: "Learn more"
           }
         ]
+      },
+      threeQuarters: {
+        imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/453/about_leadership.jpg",
+        headline: "Leadership",
+        subheadEnabled: true,
+        subhead: "Subhead would go here",
+        copy: "<p>Grounded in our values, the Maxar leadership team is committed to serving our customers and communities all over the globe and brings together industry leading experience to accelerate our innovation forward.</p>",
+        buttonEnabled: true,
+        buttonLink: "https://maxar.com",
+        linkIsExternal: true,
+        buttonText: "Learn more"
       }
     };
   }
