@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <MaxarLogo />
     <Hero :hero="hero" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
     <HeadlineCopy :headlineCopy="headlineCopy2" />
@@ -16,6 +17,7 @@ import HeadlineCopy from "./components/HeadlineCopy.vue";
 import MasonryGrid from "./components/MasonryGrid.vue";
 import ThreeQuarters from "./components/ThreeQuarters.vue";
 import TwoColumn from "./components/TwoColumn.vue";
+import MaxarLogo from "./components/MaxarLogo.vue";
 
 export default {
   name: "App",
@@ -24,7 +26,8 @@ export default {
     HeadlineCopy,
     MasonryGrid,
     ThreeQuarters,
-    TwoColumn
+    TwoColumn, 
+    MaxarLogo
   },
   data: function() {
     return {

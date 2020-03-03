@@ -4,13 +4,15 @@ import HeadlineCopy from "./HeadlineCopy.vue";
 import MasonryGrid from "./MasonryGrid.vue";
 import ThreeQuarters from "./ThreeQuarters.vue";
 import TwoColumn from "./TwoColumn.vue";
+import MaxarLogo from "./MaxarLogo.vue";
 
 const Components = {
     Hero,
     HeadlineCopy,
     MasonryGrid,
     ThreeQuarters,
-    TwoColumn
+    TwoColumn,
+    MaxarLogo
 }
 
 Object.keys(Components).forEach(name => {
