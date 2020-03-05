@@ -9,6 +9,7 @@
     <ThreeQuarters :threeQuarters="threeQuarters" />
     <TwoColumn :twoColumn="twoColumn" />
     <ThreeCard :threeCard="threeCard" />
+    <RevealingStatCards :revealingStatCards="revealingStatCards" />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import ThreeQuarters from "./components/ThreeQuarters.vue";
 import TwoColumn from "./components/TwoColumn.vue";
 import MaxarLogo from "./components/MaxarLogo.vue";
 import ThreeCard from "./components/ThreeCard.vue";
+import RevealingStatCards from "./components/RevealingStatCards";
 
 export default {
   name: "App",
@@ -30,7 +32,8 @@ export default {
     ThreeQuarters,
     TwoColumn,
     MaxarLogo,
-    ThreeCard
+    ThreeCard,
+    RevealingStatCards
   },
   data: function() {
     return {
@@ -160,6 +163,29 @@ export default {
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
             linkIsExternal: true
+          }
+        ]
+      },
+      revealingStatCards: {
+        cards: [
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/448/about_stats_1.png",
+            answer: "5,800 employees in more than 30 locations",
+            question: "How many employees?"
+          },
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/449/about_stats_2.png",
+            answer: "Customers in more than 70 countries",
+            question: "How many countries?"
+          },
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/450/about_stats_3.png",
+            answer:
+              "Collecting more than 3 million sq km of high-resolution imagery of Earth per day",
+            question: "How much imagery?"
           }
         ]
       }

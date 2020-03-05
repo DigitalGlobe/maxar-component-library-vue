@@ -282,3 +282,33 @@ threeCard: {
   ]
 }
 ```
+
+### RevealingStatCards 
+
+prop: revealingStatCards 
+
+```js
+revealingStatCards: {
+  cards: [
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/448/about_stats_1.png",
+      answer: "5,800 employees in more than 30 locations",
+      question: "How many employees?"
+    },
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/449/about_stats_2.png",
+      answer: "Customers in more than 70 countries",
+      question: "How many countries?"
+    },
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/450/about_stats_3.png",
+      answer:
+        "Collecting more than 3 million sq km of high-resolution imagery of Earth per day",
+      question: "How much imagery?"
+    }
+  ]
+}
+```

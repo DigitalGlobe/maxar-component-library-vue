@@ -6,6 +6,7 @@ import ThreeQuarters from "./ThreeQuarters.vue";
 import TwoColumn from "./TwoColumn.vue";
 import MaxarLogo from "./MaxarLogo.vue";
 import ThreeCard from "./ThreeCard.vue";
+import RevealingStatCards from "./RevealingStatCards.vue";
 
 const Components = {
     Hero,
@@ -14,7 +15,8 @@ const Components = {
     ThreeQuarters,
     TwoColumn,
     MaxarLogo,
-    ThreeCard
+    ThreeCard,
+    RevealingStatCards
 }
 
 Object.keys(Components).forEach(name => {
