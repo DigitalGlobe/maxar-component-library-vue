@@ -242,3 +242,43 @@ twoColumn: {
   imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
 }
 ```
+
+### ThreeCard 
+
+This implementation mirrors the Rails implementation which very inappropriately implements a card-wide link function. We need to fix it in Rails and here. Decided to keep it as is for parity. Sorry.
+
+prop: threeCard 
+
+```js
+threeCard: {
+  cards: [
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/652/masonry_what_is_geospatial.png",
+      link: "https://www.maxar.com",
+      heading: "What we’re doing",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkIsExternal: true
+    },
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/653/Building_in_Space_IMG_2.jpg",
+      link: "https://www.maxar.com",
+      heading: "Where We’re Going",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkIsExternal: true
+    },
+    {
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/654/card-3.png",
+      link: "https://www.maxar.com",
+      heading: "Open Data Program",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkIsExternal: true
+    }
+  ]
+}
+```

@@ -5,6 +5,7 @@ import MasonryGrid from "./MasonryGrid.vue";
 import ThreeQuarters from "./ThreeQuarters.vue";
 import TwoColumn from "./TwoColumn.vue";
 import MaxarLogo from "./MaxarLogo.vue";
+import ThreeCard from "./ThreeCard.vue";
 
 const Components = {
     Hero,
@@ -12,7 +13,8 @@ const Components = {
     MasonryGrid,
     ThreeQuarters,
     TwoColumn,
-    MaxarLogo
+    MaxarLogo,
+    ThreeCard
 }
 
 Object.keys(Components).forEach(name => {

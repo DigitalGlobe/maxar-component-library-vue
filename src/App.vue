@@ -8,6 +8,7 @@
     <MasonryGrid :masonryGrid="masonryGrid" />
     <ThreeQuarters :threeQuarters="threeQuarters" />
     <TwoColumn :twoColumn="twoColumn" />
+    <ThreeCard :threeCard="threeCard" />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import MasonryGrid from "./components/MasonryGrid.vue";
 import ThreeQuarters from "./components/ThreeQuarters.vue";
 import TwoColumn from "./components/TwoColumn.vue";
 import MaxarLogo from "./components/MaxarLogo.vue";
+import ThreeCard from "./components/ThreeCard.vue";
 
 export default {
   name: "App",
@@ -26,8 +28,9 @@ export default {
     HeadlineCopy,
     MasonryGrid,
     ThreeQuarters,
-    TwoColumn, 
-    MaxarLogo
+    TwoColumn,
+    MaxarLogo,
+    ThreeCard
   },
   data: function() {
     return {
@@ -105,11 +108,13 @@ export default {
         ]
       },
       threeQuarters: {
-        imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/453/about_leadership.jpg",
+        imageUrl:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/453/about_leadership.jpg",
         headline: "Leadership",
         subheadEnabled: true,
         subhead: "Subhead would go here",
-        copy: "<p>Grounded in our values, the Maxar leadership team is committed to serving our customers and communities all over the globe and brings together industry leading experience to accelerate our innovation forward.</p>",
+        copy:
+          "<p>Grounded in our values, the Maxar leadership team is committed to serving our customers and communities all over the globe and brings together industry leading experience to accelerate our innovation forward.</p>",
         buttonEnabled: true,
         buttonLink: "https://maxar.com",
         linkIsExternal: true,
@@ -118,12 +123,45 @@ export default {
       twoColumn: {
         headline: "Making history",
         subheadEnabled: true,
-        copy: "<p>Explore the pivotal milestones that have helped us make so many customer missions and applications possible.</p>",
+        copy:
+          "<p>Explore the pivotal milestones that have helped us make so many customer missions and applications possible.</p>",
         buttonEnabled: true,
         buttonLink: "https://www.maxar.com",
         buttonIsExternal: true,
         buttonText: "Learn more",
-        imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
+        imageUrl:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
+      },
+      threeCard: {
+        cards: [
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/652/masonry_what_is_geospatial.png",
+            link: "https://www.maxar.com",
+            heading: "What we’re doing",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkIsExternal: true
+          },
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/653/Building_in_Space_IMG_2.jpg",
+            link: "https://www.maxar.com",
+            heading: "Where We’re Going",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkIsExternal: true
+          },
+          {
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/654/card-3.png",
+            link: "https://www.maxar.com",
+            heading: "Open Data Program",
+            copy:
+              "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+            linkIsExternal: true
+          }
+        ]
       }
     };
   }
