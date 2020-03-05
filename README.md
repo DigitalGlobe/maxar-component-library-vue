@@ -110,4 +110,135 @@ If we want to add tree-shaking, we could create a build process that conditional
 
 ### Data interpolation 
 
-In its 
+In its Rails implementation, the component library uses [ERB](https://guides.rubyonrails.org/layouts_and_rendering.html) to interpolate model data into our views. ERB also gives us the ability to do some light programmatic templating functions. 
+
+In the Vue.js implementation, we have to adjust that template logic to use Vue.js templates. That transition isn't entirely one-to-one, but it's pretty close. 
+
+Since the Rails templates usually get some `component` model from the controller, the first intuition about how Vue should handle it is to pass in some object as a prop that has a similar schema to the corresponding Rails model. 
+
+The single object as a prop may be a challenge in the future because it obfuscates the underlying schema, and we may have to contend with some Vue.js rendering quirks alongside it. We may want to change something there. 
+
+## Component documentation
+
+In the future, we'll likely want to move this to an easier place to sift through. Perhaps the `npm run serve` script in this repo could serve up a documentation site. For now, every component that exists here should be documented below. At a minimum, please document: 
+
+* prop name 
+* example object with required data
+
+Perhaps in the future we can define these as separate JS classes, much like we have with ActiveRecord. 
+
+The names should be relatively one-to-one with the Rails implementations, although there will be some slight deviations. 
+
+### HeadlineCopy
+
+prop: headlineCopy
+
+```js
+headlineCopy: {
+  heading: "HEADLINE WITH COMPONENT & BUTTON",
+  copyEnabled: true,
+  copy:
+    "The promise of truth and transparency from space lives on in Maxar’s constellation. In addition to manufacturing satellites for government and commercial customers, Maxar owns and operates the world’s most sophisticated constellation of Earth imaging satellites. With five active satellites on orbit, we collect more than 3 million square kilometers of imagery each day to provide customers with a current view of our changing planet.",
+  buttonEnabled: true,
+  buttonExternal: true,
+  buttonLink: "https://maxar.com",
+  buttonText: "Learn more"
+}
+``` 
+
+### Hero
+
+prop: hero 
+
+
+```js
+hero: {
+  heading: "Hello, world!",
+  subheading: "This is Maxar",
+  buttonEnabled: true,
+  buttonLink: "https://www.maxar.com",
+  buttonText: "Learn more",
+  backgroundImageUrl:
+    "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg"
+}
+```
+
+### MasonryGrid
+
+prop: masonry grid 
+
+```js
+masonryGrid: {
+  cards: [
+    {
+      link: "https://www.maxar.com",
+      linkIsExternal: true,
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/641/new_vricon_img.jpg",
+      heading: "New era in geospatial information and OEM data privacy",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkText: "Learn more"
+    },
+    {
+      link: "https://www.maxar.com",
+      linkIsExternal: true,
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/642/Reuters_Myanmar_Investigates.jpg",
+      heading: "New era in geospatial information and OEM data privacy",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkText: "Learn more"
+    },
+    {
+      link: "https://www.maxar.com",
+      linkIsExternal: true,
+      imageUrl:
+        "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/643/200129_Maxar_09-0130.jpg",
+      heading: "New era in geospatial information and OEM data privacy",
+      copy:
+        "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
+      linkText: "Learn more"
+    }
+  ]
+}
+```
+
+### MaxarLogo 
+
+No props here - it's just SVG inside the `template`. Nice.
+
+### ThreeQuarters
+
+prop: threeQuarters
+
+```js
+threeQuarters: {
+  imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/453/about_leadership.jpg",
+  headline: "Leadership",
+  subheadEnabled: true,
+  subhead: "Subhead would go here",
+  copy: "<p>Grounded in our values, the Maxar leadership team is committed to serving our customers and communities all over the globe and brings together industry leading experience to accelerate our innovation forward.</p>",
+  buttonEnabled: true,
+  buttonLink: "https://maxar.com",
+  linkIsExternal: true,
+  buttonText: "Learn more"
+}
+```
+
+### TwoColumn
+
+prop: twoColumn 
+
+```js
+twoColumn: {
+  headline: "Making history",
+  subheadEnabled: true,
+  copy: "<p>Explore the pivotal milestones that have helped us make so many customer missions and applications possible.</p>",
+  buttonEnabled: true,
+  buttonLink: "https://www.maxar.com",
+  buttonIsExternal: true,
+  buttonText: "Learn more",
+  imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
+}
+```
