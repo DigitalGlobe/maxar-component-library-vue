@@ -7,6 +7,7 @@ import TwoColumn from "./TwoColumn.vue";
 import MaxarLogo from "./MaxarLogo.vue";
 import ThreeCard from "./ThreeCard.vue";
 import RevealingStatCards from "./RevealingStatCards.vue";
+import Carousel from "./Carousel.vue";
 
 const Components = {
     Hero,
@@ -16,7 +17,8 @@ const Components = {
     TwoColumn,
     MaxarLogo,
     ThreeCard,
-    RevealingStatCards
+    RevealingStatCards,
+    Carousel
 }
 
 Object.keys(Components).forEach(name => {

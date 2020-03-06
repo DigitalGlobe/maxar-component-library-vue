@@ -27,7 +27,7 @@
             :class="`slide ${index === 0 ? 'active' : ''}`"
           >
             <h2>{{ slide.heading }}</h2>
-            <div>{{ slide.body }}</div>
+            <div v-html="slide.body"></div>
             <a
               v-if="slide.buttonEnabled"
               :href="slide.buttonLink"
@@ -222,10 +222,10 @@ export default {
         width: 16px;
       }
       .nextButton:before {
-        background-image: image-url("icons/right-arrow.svg");
+        background-image: url("/right-arrow.svg");
       }
       .previousButton:before {
-        background-image: image-url("icons/left-arrow.svg");
+        background-image: url("/left-arrow.svg");
       }
     }
   }

@@ -10,6 +10,7 @@
     <TwoColumn :twoColumn="twoColumn" />
     <ThreeCard :threeCard="threeCard" />
     <RevealingStatCards :revealingStatCards="revealingStatCards" />
+    <Carousel :carousel="carousel" />
   </div>
 </template>
 
@@ -21,7 +22,8 @@ import ThreeQuarters from "./components/ThreeQuarters.vue";
 import TwoColumn from "./components/TwoColumn.vue";
 import MaxarLogo from "./components/MaxarLogo.vue";
 import ThreeCard from "./components/ThreeCard.vue";
-import RevealingStatCards from "./components/RevealingStatCards";
+import RevealingStatCards from "./components/RevealingStatCards.vue";
+import Carousel from "./components/Carousel.vue";
 
 export default {
   name: "App",
@@ -33,7 +35,8 @@ export default {
     TwoColumn,
     MaxarLogo,
     ThreeCard,
-    RevealingStatCards
+    RevealingStatCards,
+    Carousel
   },
   data: function() {
     return {
@@ -186,6 +189,39 @@ export default {
             answer:
               "Collecting more than 3 million sq km of high-resolution imagery of Earth per day",
             question: "How much imagery?"
+          }
+        ]
+      },
+      carousel: {
+        sharedHeadingEnabled: true,
+        sharedHeading: "Carousel component",
+        slides: [
+          {
+            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/644/regular_featured_event_carousel.jpg",
+            heading: "FEATURED EVENT",
+            body: "Join Maxar at the 36th annual Space Symposium hosted by the Space Foundation.",
+            buttonEnabled: true,
+            buttonLink: "https://maxar.com",
+            buttonIsExternal: true,
+            buttonText: "Learn more"
+          },
+          {
+            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/645/regular_dragonfly_1_SPIDER.jpg",
+            heading: "MAXAR IN THE NEWS",
+            body: "NASA’s plan to build stuff in space just took its first step",
+            buttonEnabled: true,
+            buttonLink: "https://maxar.com",
+            buttonIsExternal: true,
+            buttonText: "Learn more"
+          },
+          {
+            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/646/regular_WorldView-Legion_6-satellites_2x.jpg",
+            heading: "New on the blog",
+            body: "Enhancing national security missions with WorldView Legion",
+            buttonEnabled: true,
+            buttonLink: "http://blog.maxar.com",
+            buttonIsExternal: true,
+            buttonText: "Learn more"
           }
         ]
       }
