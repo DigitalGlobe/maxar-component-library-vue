@@ -29,6 +29,7 @@
             <h2>{{ slide.heading }}</h2>
             <div v-html="slide.body"></div>
             <a
+              class="button"
               v-if="slide.buttonEnabled"
               :href="slide.buttonLink"
               :target="slide.buttonIsExternal ? '_blank' : '_self'"
