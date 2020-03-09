@@ -11,6 +11,7 @@
     <ThreeCard :threeCard="threeCard" />
     <RevealingStatCards :revealingStatCards="revealingStatCards" />
     <Carousel :carousel="carousel" />
+    <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import MaxarLogo from "./components/MaxarLogo.vue";
 import ThreeCard from "./components/ThreeCard.vue";
 import RevealingStatCards from "./components/RevealingStatCards.vue";
 import Carousel from "./components/Carousel.vue";
+import FullColorCta from "./components/FullColorCta";
 
 export default {
   name: "App",
@@ -36,7 +38,8 @@ export default {
     MaxarLogo,
     ThreeCard,
     RevealingStatCards,
-    Carousel
+    Carousel,
+    FullColorCta
   },
   data: function() {
     return {
@@ -224,6 +227,14 @@ export default {
             buttonText: "Learn more"
           }
         ]
+      },
+      fullColorCta: {
+        heading: "Stay curious",
+        copy: "<p>Get the latest in geospatial breakthroughs from The GIST and in-depth analysis of real-world events by subscribing to our monthly Maxar Spotlight periodical.</p>",
+        buttonEnabled: true,
+        buttonLink: 'https://maxar.com',
+        buttonExternal: true,
+        buttonText: 'Learn more'
       }
     };
   }

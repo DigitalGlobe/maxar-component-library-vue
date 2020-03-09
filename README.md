@@ -354,3 +354,18 @@ carousel: {
   ]
 }
 ```
+
+### FullColorCta 
+
+prop: `fullColorCta`
+
+```js
+fullColorCta: {
+  heading: "Stay curious",
+  copy: "<p>Get the latest in geospatial breakthroughs from The GIST and in-depth analysis of real-world events by subscribing to our monthly Maxar Spotlight periodical.</p>",
+  buttonEnabled: true,
+  buttonLink: 'https://maxar.com',
+  buttonExternal: true,
+  buttonText: 'Learn more'
+}
+```

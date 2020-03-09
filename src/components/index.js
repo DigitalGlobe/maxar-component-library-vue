@@ -8,6 +8,7 @@ import MaxarLogo from "./MaxarLogo.vue";
 import ThreeCard from "./ThreeCard.vue";
 import RevealingStatCards from "./RevealingStatCards.vue";
 import Carousel from "./Carousel.vue";
+import FullColorCta from "./FullColorCta.vue";
 
 const Components = {
     Hero,
@@ -18,7 +19,8 @@ const Components = {
     MaxarLogo,
     ThreeCard,
     RevealingStatCards,
-    Carousel
+    Carousel,
+    FullColorCta
 }
 
 Object.keys(Components).forEach(name => {
