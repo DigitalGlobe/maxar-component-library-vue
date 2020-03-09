@@ -369,3 +369,17 @@ fullColorCta: {
   buttonText: 'Learn more'
 }
 ```
+
+### FeaturedResource 
+
+prop: `featuredResource`
+
+```js
+featuredResource: {
+  title: "UI/UX Software Engineer (TS/SCI)",
+  subtitle: "Herndon, VA",
+  link: "https://maxar.com",
+  linkExternal: true,
+  linkText: "Read more"
+}
+```

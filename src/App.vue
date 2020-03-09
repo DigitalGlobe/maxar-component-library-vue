@@ -11,6 +11,7 @@
     <ThreeCard :threeCard="threeCard" />
     <RevealingStatCards :revealingStatCards="revealingStatCards" />
     <Carousel :carousel="carousel" />
+    <FeaturedResource :featuredResource="featuredResource" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -26,6 +27,7 @@ import ThreeCard from "./components/ThreeCard.vue";
 import RevealingStatCards from "./components/RevealingStatCards.vue";
 import Carousel from "./components/Carousel.vue";
 import FullColorCta from "./components/FullColorCta";
+import FeaturedResource from "./components/FeaturedResource";
 
 export default {
   name: "App",
@@ -39,7 +41,8 @@ export default {
     ThreeCard,
     RevealingStatCards,
     Carousel,
-    FullColorCta
+    FullColorCta,
+    FeaturedResource
   },
   data: function() {
     return {
@@ -200,25 +203,30 @@ export default {
         sharedHeading: "Carousel component",
         slides: [
           {
-            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/644/regular_featured_event_carousel.jpg",
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/644/regular_featured_event_carousel.jpg",
             heading: "FEATURED EVENT",
-            body: "Join Maxar at the 36th annual Space Symposium hosted by the Space Foundation.",
+            body:
+              "Join Maxar at the 36th annual Space Symposium hosted by the Space Foundation.",
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
             buttonText: "Learn more"
           },
           {
-            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/645/regular_dragonfly_1_SPIDER.jpg",
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/645/regular_dragonfly_1_SPIDER.jpg",
             heading: "MAXAR IN THE NEWS",
-            body: "NASA’s plan to build stuff in space just took its first step",
+            body:
+              "NASA’s plan to build stuff in space just took its first step",
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
             buttonText: "Learn more"
           },
           {
-            imageUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/646/regular_WorldView-Legion_6-satellites_2x.jpg",
+            imageUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/646/regular_WorldView-Legion_6-satellites_2x.jpg",
             heading: "New on the blog",
             body: "Enhancing national security missions with WorldView Legion",
             buttonEnabled: true,
@@ -230,11 +238,19 @@ export default {
       },
       fullColorCta: {
         heading: "Stay curious",
-        copy: "<p>Get the latest in geospatial breakthroughs from The GIST and in-depth analysis of real-world events by subscribing to our monthly Maxar Spotlight periodical.</p>",
+        copy:
+          "<p>Get the latest in geospatial breakthroughs from The GIST and in-depth analysis of real-world events by subscribing to our monthly Maxar Spotlight periodical.</p>",
         buttonEnabled: true,
-        buttonLink: 'https://maxar.com',
+        buttonLink: "https://maxar.com",
         buttonExternal: true,
-        buttonText: 'Learn more'
+        buttonText: "Learn more"
+      },
+      featuredResource: {
+        title: "UI/UX Software Engineer (TS/SCI)",
+        subtitle: "Herndon, VA",
+        link: "https://maxar.com",
+        linkExternal: true,
+        linkText: "Read more"
       }
     };
   }

@@ -9,6 +9,7 @@ import ThreeCard from "./ThreeCard.vue";
 import RevealingStatCards from "./RevealingStatCards.vue";
 import Carousel from "./Carousel.vue";
 import FullColorCta from "./FullColorCta.vue";
+import FeaturedResource from "./FeaturedResource.vue";
 
 const Components = {
     Hero,
@@ -20,7 +21,8 @@ const Components = {
     ThreeCard,
     RevealingStatCards,
     Carousel,
-    FullColorCta
+    FullColorCta,
+    FeaturedResource
 }
 
 Object.keys(Components).forEach(name => {
