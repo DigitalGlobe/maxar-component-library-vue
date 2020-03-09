@@ -12,6 +12,7 @@ import FullColorCta from "./FullColorCta.vue";
 import FeaturedResource from "./FeaturedResource.vue";
 import StatBlock from "./StatBlock.vue"; 
 import IconBlock from "./IconBlock.vue";
+import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
 
 const Components = {
     Hero,
@@ -26,7 +27,8 @@ const Components = {
     FullColorCta,
     FeaturedResource,
     StatBlock,
-    IconBlock
+    IconBlock,
+    TwoColumnTallIcons
 }
 
 Object.keys(Components).forEach(name => {

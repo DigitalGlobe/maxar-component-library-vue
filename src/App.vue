@@ -14,6 +14,7 @@
     <FeaturedResource :featuredResource="featuredResource" />
     <StatBlock :statBlock="statBlock" />
     <IconBlock :iconBlock="iconBlock" />
+    <TwoColumnTallIcons :twoColumnTallIcons="twoColumnTallIcons" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -28,10 +29,11 @@ import MaxarLogo from "./components/MaxarLogo.vue";
 import ThreeCard from "./components/ThreeCard.vue";
 import RevealingStatCards from "./components/RevealingStatCards.vue";
 import Carousel from "./components/Carousel.vue";
-import FullColorCta from "./components/FullColorCta";
-import FeaturedResource from "./components/FeaturedResource";
+import FullColorCta from "./components/FullColorCta.vue";
+import FeaturedResource from "./components/FeaturedResource.vue";
 import StatBlock from "./components/StatBlock.vue";
 import IconBlock from "./components/IconBlock.vue";
+import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
 
 export default {
   name: "App",
@@ -48,7 +50,8 @@ export default {
     FullColorCta,
     FeaturedResource,
     StatBlock,
-    IconBlock
+    IconBlock,
+    TwoColumnTallIcons
   },
   data: function() {
     return {
@@ -292,21 +295,58 @@ export default {
         icons: [
           {
             heading: "We put the mission first",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/460/rocket.png",
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/460/rocket.png",
             copyEnabled: true,
-            copy: "Everything we do is to exceed the expectations and support the ambitions of our customers."
+            copy:
+              "Everything we do is to exceed the expectations and support the ambitions of our customers."
           },
           {
             heading: "We work better together",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/461/gear.png",
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/461/gear.png",
             copyEnabled: true,
-            copy: "We are an organization that values collaboration and diversity to create a better future."
+            copy:
+              "We are an organization that values collaboration and diversity to create a better future."
           },
           {
             heading: "We stay curious",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/462/magglass.png",
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/462/magglass.png",
             copyEnabled: true,
-            copy: "We never stop working to discover the answers to the questions of tomorrow and to solve the most difficult problems."
+            copy:
+              "We never stop working to discover the answers to the questions of tomorrow and to solve the most difficult problems."
+          }
+        ]
+      },
+      twoColumnTallIcons: {
+        imageUrl:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/504/world_cropped.gif",
+        bullets: [
+          {
+            heading: "Competitive salary",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/496/Path_603.jpg",
+            copy: "We competitively structure our salaries based on a number of factors including the responsibilities you will have as well as the current market conditions in the region."
+          },
+          {
+            heading: "Compehensive health plan",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/497/Group_1092.png",
+            copy: "We offer comprehensive health coverage, health and wellness programs and on-site fitness centers (at some locations) to keep you and your family healthy. This includes medical, dental and vision insurance, along with flexible spending accounts, life insurance, pet insurance and more."
+          },
+          {
+            heading: "401K retirement benefits",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/498/Group_1093.png",
+            copy: "We help you prepare for your future by offering an employee match on your contributions up to 4 percent of your salary which is immediately vested."
+          },
+          {
+            heading: "Generous time off policy",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/499/Group_1094.png",
+            copy: "We value a healthy work-life balance. We have a flexible leave policy so you can take the time you need off, when you need it, with your manager's approval. In addition, we have leave policies to support parental leave, military duty, bereavement, jury duty and disability."
+          },
+          {
+            heading: "Tuition reimbursement & loan repayment",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/500/Group_1095.png",
+            copy: "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry."
           }
         ]
       }
