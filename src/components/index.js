@@ -11,6 +11,7 @@ import Carousel from "./Carousel.vue";
 import FullColorCta from "./FullColorCta.vue";
 import FeaturedResource from "./FeaturedResource.vue";
 import StatBlock from "./StatBlock.vue"; 
+import IconBlock from "./IconBlock.vue";
 
 const Components = {
     Hero,
@@ -24,7 +25,8 @@ const Components = {
     Carousel,
     FullColorCta,
     FeaturedResource,
-    StatBlock
+    StatBlock,
+    IconBlock
 }
 
 Object.keys(Components).forEach(name => {

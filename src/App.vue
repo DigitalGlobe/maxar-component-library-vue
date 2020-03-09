@@ -13,6 +13,7 @@
     <Carousel :carousel="carousel" />
     <FeaturedResource :featuredResource="featuredResource" />
     <StatBlock :statBlock="statBlock" />
+    <IconBlock :iconBlock="iconBlock" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -30,6 +31,7 @@ import Carousel from "./components/Carousel.vue";
 import FullColorCta from "./components/FullColorCta";
 import FeaturedResource from "./components/FeaturedResource";
 import StatBlock from "./components/StatBlock.vue";
+import IconBlock from "./components/IconBlock.vue";
 
 export default {
   name: "App",
@@ -45,7 +47,8 @@ export default {
     Carousel,
     FullColorCta,
     FeaturedResource,
-    StatBlock
+    StatBlock,
+    IconBlock
   },
   data: function() {
     return {
@@ -282,6 +285,28 @@ export default {
           {
             stat: "3M sq km",
             description: "Collected each day"
+          }
+        ]
+      },
+      iconBlock: {
+        icons: [
+          {
+            heading: "We put the mission first",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/460/rocket.png",
+            copyEnabled: true,
+            copy: "Everything we do is to exceed the expectations and support the ambitions of our customers."
+          },
+          {
+            heading: "We work better together",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/461/gear.png",
+            copyEnabled: true,
+            copy: "We are an organization that values collaboration and diversity to create a better future."
+          },
+          {
+            heading: "We stay curious",
+            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/462/magglass.png",
+            copyEnabled: true,
+            copy: "We never stop working to discover the answers to the questions of tomorrow and to solve the most difficult problems."
           }
         ]
       }
