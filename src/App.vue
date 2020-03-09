@@ -15,6 +15,7 @@
     <StatBlock :statBlock="statBlock" />
     <IconBlock :iconBlock="iconBlock" />
     <TwoColumnTallIcons :twoColumnTallIcons="twoColumnTallIcons" />
+    <FullWidthHeightImage :fullWidthHeightImage="fullWidthHeightImage" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -34,6 +35,7 @@ import FeaturedResource from "./components/FeaturedResource.vue";
 import StatBlock from "./components/StatBlock.vue";
 import IconBlock from "./components/IconBlock.vue";
 import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
+import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
 
 export default {
   name: "App",
@@ -51,7 +53,8 @@ export default {
     FeaturedResource,
     StatBlock,
     IconBlock,
-    TwoColumnTallIcons
+    TwoColumnTallIcons,
+    FullWidthHeightImage
   },
   data: function() {
     return {
@@ -349,6 +352,9 @@ export default {
             copy: "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry."
           }
         ]
+      },
+      fullWidthHeightImage: {
+        imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg'
       }
     };
   }

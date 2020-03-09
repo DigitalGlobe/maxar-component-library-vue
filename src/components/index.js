@@ -13,6 +13,7 @@ import FeaturedResource from "./FeaturedResource.vue";
 import StatBlock from "./StatBlock.vue"; 
 import IconBlock from "./IconBlock.vue";
 import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
+import FulLWidthHeightImage from "./FullWidthHeightImage.vue";
 
 const Components = {
     Hero,
@@ -28,7 +29,8 @@ const Components = {
     FeaturedResource,
     StatBlock,
     IconBlock,
-    TwoColumnTallIcons
+    TwoColumnTallIcons,
+    FullWidthHeightImage
 }
 
 Object.keys(Components).forEach(name => {
