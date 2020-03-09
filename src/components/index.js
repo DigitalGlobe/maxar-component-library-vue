@@ -10,6 +10,7 @@ import RevealingStatCards from "./RevealingStatCards.vue";
 import Carousel from "./Carousel.vue";
 import FullColorCta from "./FullColorCta.vue";
 import FeaturedResource from "./FeaturedResource.vue";
+import StatBlock from "./StatBlock.vue"; 
 
 const Components = {
     Hero,
@@ -22,7 +23,8 @@ const Components = {
     RevealingStatCards,
     Carousel,
     FullColorCta,
-    FeaturedResource
+    FeaturedResource,
+    StatBlock
 }
 
 Object.keys(Components).forEach(name => {

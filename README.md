@@ -383,3 +383,40 @@ featuredResource: {
   linkText: "Read more"
 }
 ```
+
+### StatBlock
+
+prop: `statBlock`
+
+```js
+statBlock: {
+  imageUrl:
+    "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/647/Solar_Array_Deploy.jpg",
+  stats: [
+    {
+      stat: "60+ years",
+      description: "Space Infrastructure leadership"
+    },
+    {
+      stat: "2,200",
+      description: "Collective years on orbit"
+    },
+    {
+      stat: "92",
+      description: "Geo communication satellites on orbit today"
+    },
+    {
+      stat: "5",
+      description: "5 robotic arms on Mars"
+    },
+    {
+      stat: "100+ PB",
+      description: "Archive of global imagery"
+    },
+    {
+      stat: "3M sq km",
+      description: "Collected each day"
+    }
+  ]
+}
+```

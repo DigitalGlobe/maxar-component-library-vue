@@ -12,6 +12,7 @@
     <RevealingStatCards :revealingStatCards="revealingStatCards" />
     <Carousel :carousel="carousel" />
     <FeaturedResource :featuredResource="featuredResource" />
+    <StatBlock :statBlock="statBlock" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -28,6 +29,7 @@ import RevealingStatCards from "./components/RevealingStatCards.vue";
 import Carousel from "./components/Carousel.vue";
 import FullColorCta from "./components/FullColorCta";
 import FeaturedResource from "./components/FeaturedResource";
+import StatBlock from "./components/StatBlock.vue";
 
 export default {
   name: "App",
@@ -42,7 +44,8 @@ export default {
     RevealingStatCards,
     Carousel,
     FullColorCta,
-    FeaturedResource
+    FeaturedResource,
+    StatBlock
   },
   data: function() {
     return {
@@ -251,6 +254,36 @@ export default {
         link: "https://maxar.com",
         linkExternal: true,
         linkText: "Read more"
+      },
+      statBlock: {
+        imageUrl:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/647/Solar_Array_Deploy.jpg",
+        stats: [
+          {
+            stat: "60+ years",
+            description: "Space Infrastructure leadership"
+          },
+          {
+            stat: "2,200",
+            description: "Collective years on orbit"
+          },
+          {
+            stat: "92",
+            description: "Geo communication satellites on orbit today"
+          },
+          {
+            stat: "5",
+            description: "5 robotic arms on Mars"
+          },
+          {
+            stat: "100+ PB",
+            description: "Archive of global imagery"
+          },
+          {
+            stat: "3M sq km",
+            description: "Collected each day"
+          }
+        ]
       }
     };
   }
