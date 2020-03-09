@@ -13,7 +13,8 @@ import FeaturedResource from "./FeaturedResource.vue";
 import StatBlock from "./StatBlock.vue"; 
 import IconBlock from "./IconBlock.vue";
 import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
-import FulLWidthHeightImage from "./FullWidthHeightImage.vue";
+import FullWidthHeightImage from "./FullWidthHeightImage.vue";
+import WistiaVideo from "./WistiaVideo.vue";
 
 const Components = {
     Hero,
@@ -30,7 +31,8 @@ const Components = {
     StatBlock,
     IconBlock,
     TwoColumnTallIcons,
-    FullWidthHeightImage
+    FullWidthHeightImage,
+    WistiaVideo
 }
 
 Object.keys(Components).forEach(name => {

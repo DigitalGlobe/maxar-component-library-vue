@@ -16,6 +16,7 @@
     <IconBlock :iconBlock="iconBlock" />
     <TwoColumnTallIcons :twoColumnTallIcons="twoColumnTallIcons" />
     <FullWidthHeightImage :fullWidthHeightImage="fullWidthHeightImage" />
+    <WistiaVideo :wistiaVideo="wistiaVideo" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
 </template>
@@ -36,6 +37,7 @@ import StatBlock from "./components/StatBlock.vue";
 import IconBlock from "./components/IconBlock.vue";
 import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
+import WistiaVideo from "./components/WistiaVideo.vue";
 
 export default {
   name: "App",
@@ -54,7 +56,8 @@ export default {
     StatBlock,
     IconBlock,
     TwoColumnTallIcons,
-    FullWidthHeightImage
+    FullWidthHeightImage,
+    WistiaVideo
   },
   data: function() {
     return {
@@ -355,6 +358,9 @@ export default {
       },
       fullWidthHeightImage: {
         imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg'
+      },
+      wistiaVideo: {
+        wistiaId: 'n0u0wusht0'
       }
     };
   }
