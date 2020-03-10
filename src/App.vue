@@ -222,7 +222,7 @@ export default {
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/644/regular_featured_event_carousel.jpg",
             heading: "FEATURED EVENT",
             body:
-              "Join Maxar at the 36th annual Space Symposium hosted by the Space Foundation.",
+              "<p>Join Maxar at the 36th annual Space Symposium hosted by the Space Foundation.</p>",
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
@@ -233,7 +233,7 @@ export default {
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/645/regular_dragonfly_1_SPIDER.jpg",
             heading: "MAXAR IN THE NEWS",
             body:
-              "NASA’s plan to build stuff in space just took its first step",
+              "<p>NASA’s plan to build stuff in space just took its first step</p>",
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
@@ -243,7 +243,7 @@ export default {
             imageUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/646/regular_WorldView-Legion_6-satellites_2x.jpg",
             heading: "New on the blog",
-            body: "Enhancing national security missions with WorldView Legion",
+            body: "<p>Enhancing national security missions with WorldView Legion</p>",
             buttonEnabled: true,
             buttonLink: "http://blog.maxar.com",
             buttonIsExternal: true,

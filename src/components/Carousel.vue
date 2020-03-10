@@ -21,16 +21,17 @@
           <button
             v-for="(slide, index) in carousel.slides"
             :key="slide.heading"
-            :class="`indicator navbar__link ${index === 0 ? 'active' : ''}`"
+            :class="index === currentSlide ? 'active indicator navbar__link ' : 'indicator navbar__link'"
             :data-index="index"
+            @click="currentSlide = index"
           >{{ index + 1 }}</button>
         </div>
         <div class="slider">
           <div
             v-for="(slide, index) in carousel.slides"
             v-show="index === currentSlide"
-            :key="slide.buttonLink"
-            :class="`${index === currentSlide ? 'slide active' : 'slide'}`"
+            :key="slide.buttonLink + index"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
           >
             <h2>{{ slide.heading }}</h2>
             <div v-html="slide.body"></div>
@@ -43,8 +44,16 @@
           </div>
         </div>
         <div class="arrows">
-          <button class="previousButton">Previous</button>
-          <button class="nextButton">Next</button>
+          <button
+            @click="decrementCurrentSlide"
+            class="previousButton"
+            :style="`background-image: url('${require('@/assets/left-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Previous</button>
+          <button
+            @click="incrementCurrentSlide"
+            class="nextButton"
+            :style="`background-image: url('${require('@/assets/right-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Next</button>
         </div>
       </div>
     </section>
@@ -57,6 +66,18 @@ export default {
     return {
       currentSlide: 0
     };
+  },
+  methods: {
+    incrementCurrentSlide: function() {
+      if (this.currentSlide < this.carousel.slides.length - 1) {
+        this.currentSlide = this.currentSlide + 1;
+      }
+    },
+    decrementCurrentSlide: function() {
+      if (this.currentSlide > 0) {
+        this.currentSlide = this.currentSlide - 1;
+      }
+    }
   }
 };
 </script>
