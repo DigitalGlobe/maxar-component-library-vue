@@ -8,9 +8,8 @@
         <div class="slider">
           <div
             v-for="(slide, index) in carousel.slides"
-            v-show="index === currentSlide"
             :key="slide.imageUrl"
-            class="slide"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
           >
             <img :src="slide.imageUrl" />
           </div>
@@ -30,6 +29,7 @@
           <div
             v-for="(slide, index) in carousel.slides"
             v-show="index === currentSlide"
+            transition="carousel"
             :key="slide.buttonLink + index"
             :class="index === currentSlide ? 'slide active' : 'slide'"
           >
@@ -105,15 +105,21 @@ export default {
       width: 50%;
     }
     .slider {
-      display: flex;
       height: 100%;
-      transition: transform 0.4s ease-in-out;
-      transform: translateX(0%);
     }
 
     .slide {
+      transition: transform 0.4s ease-in-out;
+      transform: translateX(-100%);
+      height: 0;
+      width: 0;
       img {
         display: block;
+        height: 100%;
+        width: 100%;
+      }
+      &.active {
+        transform: translateX(0%);
         height: 100%;
         width: 100%;
       }
