@@ -6,7 +6,12 @@
     <section class="CarouselComponent">
       <div class="images">
         <div class="slider">
-          <div v-for="slide in carousel.slides" :key="slide.imageUrl" class="slide">
+          <div
+            v-for="(slide, index) in carousel.slides"
+            v-show="index === currentSlide"
+            :key="slide.imageUrl"
+            class="slide"
+          >
             <img :src="slide.imageUrl" />
           </div>
         </div>
@@ -23,8 +28,9 @@
         <div class="slider">
           <div
             v-for="(slide, index) in carousel.slides"
+            v-show="index === currentSlide"
             :key="slide.buttonLink"
-            :class="`slide ${index === 0 ? 'active' : ''}`"
+            :class="`${index === currentSlide ? 'slide active' : 'slide'}`"
           >
             <h2>{{ slide.heading }}</h2>
             <div v-html="slide.body"></div>
@@ -46,7 +52,12 @@
 </template>
 <script>
 export default {
-  props: ["carousel"]
+  props: ["carousel"],
+  data: function() {
+    return {
+      currentSlide: 0
+    };
+  }
 };
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Carousel :carousel="carousel" />
     <MaxarLogo />
     <Hero :hero="hero" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
@@ -10,7 +11,6 @@
     <TwoColumn :twoColumn="twoColumn" />
     <ThreeCard :threeCard="threeCard" />
     <RevealingStatCards :revealingStatCards="revealingStatCards" />
-    <Carousel :carousel="carousel" />
     <FeaturedResource :featuredResource="featuredResource" />
     <StatBlock :statBlock="statBlock" />
     <IconBlock :iconBlock="iconBlock" />
