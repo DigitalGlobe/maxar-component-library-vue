@@ -3,7 +3,11 @@
     <div v-if="carousel.sharedHeadingEnabled" class="sharedHeading">
       <h2>{{ carousel.sharedHeading }}</h2>
     </div>
-    <section class="CarouselComponent">
+    <section
+      class="CarouselComponent"
+      v-on:touchstart.capture="handleTouchstart"
+      v-on:touchend.capture="handleTouchend($event)"
+    >
       <div class="images">
         <div class="slider">
           <div
@@ -64,7 +68,9 @@ export default {
   props: ["carousel"],
   data: function() {
     return {
-      currentSlide: 0
+      currentSlide: 0,
+      swipePixelLength: 100,
+      touchStartLocation: null
     };
   },
   methods: {
@@ -76,6 +82,22 @@ export default {
     decrementCurrentSlide: function() {
       if (this.currentSlide > 0) {
         this.currentSlide = this.currentSlide - 1;
+      }
+    },
+    handleTouchstart: function(event) {
+      this.touchStartLocation = event.changedTouches[0].pageX;
+    },
+    handleTouchend: function(event) {
+      const touchEndLocation = event.changedTouches[0].pageX;
+      if (touchEndLocation - this.touchStartLocation > this.swipePixelLength) {
+        event.preventDefault();
+        this.incrementCurrentSlide();
+      } else if (
+        this.touchStartLocation - touchEndLocation >
+        Math.abs(this.swipePixelLength)
+      ) {
+        event.preventDefault();
+        this.decrementCurrentSlide();
       }
     }
   }
