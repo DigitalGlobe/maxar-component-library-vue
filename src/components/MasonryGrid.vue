@@ -16,8 +16,8 @@
     </div>
     <div class="MasonryGridComponent__right-column">
       <a
-        v-for="card of rightColumnCards"
-        v-bind:key="card.link"
+        v-for="(card, index) of rightColumnCards"
+        v-bind:key="card.link + index"
         class="MasonryGridComponent__card"
         :href="card.link"
         :target="card.linkIsExternal? '_blank' : ''"

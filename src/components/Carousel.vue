@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <section
+    v-on:touchstart.capture="handleTouchstart"
+    v-on:touchend.capture="handleTouchend($event)"
+  >
     <div v-if="carousel.sharedHeadingEnabled" class="sharedHeading">
       <h2>{{ carousel.sharedHeading }}</h2>
     </div>
-    <section class="CarouselComponent">
+    <div class="CarouselComponent">
       <div class="images">
         <div class="slider">
-          <div v-for="slide in carousel.slides" :key="slide.imageUrl" class="slide">
+          <div
+            v-for="(slide, index) in carousel.slides"
+            :key="slide.imageUrl"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
+          >
             <img :src="slide.imageUrl" />
           </div>
         </div>
@@ -16,15 +23,18 @@
           <button
             v-for="(slide, index) in carousel.slides"
             :key="slide.heading"
-            :class="`indicator navbar__link ${index === 0 ? 'active' : ''}`"
+            :class="index === currentSlide ? 'active indicator navbar__link ' : 'indicator navbar__link'"
             :data-index="index"
+            @click="currentSlide = index"
           >{{ index + 1 }}</button>
         </div>
         <div class="slider">
           <div
             v-for="(slide, index) in carousel.slides"
-            :key="slide.buttonLink"
-            :class="`slide ${index === 0 ? 'active' : ''}`"
+            v-show="index === currentSlide"
+            transition="carousel"
+            :key="slide.buttonLink + index"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
           >
             <h2>{{ slide.heading }}</h2>
             <div v-html="slide.body"></div>
@@ -37,24 +47,64 @@
           </div>
         </div>
         <div class="arrows">
-          <button class="previousButton">Previous</button>
-          <button class="nextButton">Next</button>
+          <button
+            @click="decrementCurrentSlide"
+            class="previousButton"
+            :style="`background-image: url('${require('@/assets/left-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Previous</button>
+          <button
+            @click="incrementCurrentSlide"
+            class="nextButton"
+            :style="`background-image: url('${require('@/assets/right-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Next</button>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 <script>
 export default {
-  props: ["carousel"]
+  props: ["carousel"],
+  data: function() {
+    return {
+      currentSlide: 0,
+      swipePixelLength: 100,
+      touchStartLocation: null
+    };
+  },
+  methods: {
+    incrementCurrentSlide: function() {
+      if (this.currentSlide < this.carousel.slides.length - 1) {
+        this.currentSlide = this.currentSlide + 1;
+      }
+    },
+    decrementCurrentSlide: function() {
+      if (this.currentSlide > 0) {
+        this.currentSlide = this.currentSlide - 1;
+      }
+    },
+    handleTouchstart: function(event) {
+      this.touchStartLocation = event.changedTouches[0].pageX;
+    },
+    handleTouchend: function(event) {
+      const touchEndLocation = event.changedTouches[0].pageX;
+      if (touchEndLocation - this.touchStartLocation > this.swipePixelLength) {
+        event.preventDefault();
+        this.incrementCurrentSlide();
+      } else if (
+        this.touchStartLocation - touchEndLocation >
+        Math.abs(this.swipePixelLength)
+      ) {
+        event.preventDefault();
+        this.decrementCurrentSlide();
+      }
+    }
+  }
 };
 </script>
 
 <style lang="scss">
 .CarouselComponent {
-  // Use margin instead of padding for javascript calculation reasons
-  margin: $half_space $mobile_side_space;
-  padding: 0;
   position: relative;
 
   @media (min-width: 1024px) {
@@ -73,15 +123,21 @@ export default {
       width: 50%;
     }
     .slider {
-      display: flex;
       height: 100%;
-      transition: transform 0.4s ease-in-out;
-      transform: translateX(0%);
     }
 
     .slide {
+      transition: transform 0.4s ease-in-out;
+      transform: translateX(-100%);
+      height: 0;
+      width: 0;
       img {
         display: block;
+        height: 100%;
+        width: 100%;
+      }
+      &.active {
+        transform: translateX(0%);
         height: 100%;
         width: 100%;
       }
@@ -222,19 +278,12 @@ export default {
         top: 0;
         width: 16px;
       }
-      .nextButton:before {
-        background-image: url("/right-arrow.svg");
-      }
-      .previousButton:before {
-        background-image: url("/left-arrow.svg");
-      }
     }
   }
 }
 .sharedHeading {
   background-color: $color_grey;
-  padding: $base_space 0;
-  margin-bottom: -$half_space;
+  padding: $base_space;
   h2 {
     color: white;
     text-align: center;

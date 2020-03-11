@@ -1,6 +1,6 @@
 <template>
   <section class="ThreeCardComponent">
-    <article v-for="card in threeCard.cards" :key="card.link" @click="pretendToBeALink(card)">
+    <article v-for="(card, index) in threeCard.cards" :key="card.link + index" @click="pretendToBeALink(card)">
       <img :src="card.imageUrl" />
       <div class="ThreeCardComponent__copy">
         <div>
