@@ -6,63 +6,60 @@
     <div v-if="carousel.sharedHeadingEnabled" class="sharedHeading">
       <h2>{{ carousel.sharedHeading }}</h2>
     </div>
-    <div     class="CarouselComponent">
-
-
-
-    <div class="images">
-      <div class="slider">
-        <div
-          v-for="(slide, index) in carousel.slides"
-          :key="slide.imageUrl"
-          :class="index === currentSlide ? 'slide active' : 'slide'"
-        >
-          <img :src="slide.imageUrl" />
+    <div class="CarouselComponent">
+      <div class="images">
+        <div class="slider">
+          <div
+            v-for="(slide, index) in carousel.slides"
+            :key="slide.imageUrl"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
+          >
+            <img :src="slide.imageUrl" />
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <div class="indicators">
+          <button
+            v-for="(slide, index) in carousel.slides"
+            :key="slide.heading"
+            :class="index === currentSlide ? 'active indicator navbar__link ' : 'indicator navbar__link'"
+            :data-index="index"
+            @click="currentSlide = index"
+          >{{ index + 1 }}</button>
+        </div>
+        <div class="slider">
+          <div
+            v-for="(slide, index) in carousel.slides"
+            v-show="index === currentSlide"
+            transition="carousel"
+            :key="slide.buttonLink + index"
+            :class="index === currentSlide ? 'slide active' : 'slide'"
+          >
+            <h2>{{ slide.heading }}</h2>
+            <div v-html="slide.body"></div>
+            <a
+              class="button"
+              v-if="slide.buttonEnabled"
+              :href="slide.buttonLink"
+              :target="slide.buttonIsExternal ? '_blank' : '_self'"
+            >{{slide.buttonText}}</a>
+          </div>
+        </div>
+        <div class="arrows">
+          <button
+            @click="decrementCurrentSlide"
+            class="previousButton"
+            :style="`background-image: url('${require('@/assets/left-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Previous</button>
+          <button
+            @click="incrementCurrentSlide"
+            class="nextButton"
+            :style="`background-image: url('${require('@/assets/right-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
+          >Next</button>
         </div>
       </div>
     </div>
-    <div class="copy">
-      <div class="indicators">
-        <button
-          v-for="(slide, index) in carousel.slides"
-          :key="slide.heading"
-          :class="index === currentSlide ? 'active indicator navbar__link ' : 'indicator navbar__link'"
-          :data-index="index"
-          @click="currentSlide = index"
-        >{{ index + 1 }}</button>
-      </div>
-      <div class="slider">
-        <div
-          v-for="(slide, index) in carousel.slides"
-          v-show="index === currentSlide"
-          transition="carousel"
-          :key="slide.buttonLink + index"
-          :class="index === currentSlide ? 'slide active' : 'slide'"
-        >
-          <h2>{{ slide.heading }}</h2>
-          <div v-html="slide.body"></div>
-          <a
-            class="button"
-            v-if="slide.buttonEnabled"
-            :href="slide.buttonLink"
-            :target="slide.buttonIsExternal ? '_blank' : '_self'"
-          >{{slide.buttonText}}</a>
-        </div>
-      </div>
-      <div class="arrows">
-        <button
-          @click="decrementCurrentSlide"
-          class="previousButton"
-          :style="`background-image: url('${require('@/assets/left-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
-        >Previous</button>
-        <button
-          @click="incrementCurrentSlide"
-          class="nextButton"
-          :style="`background-image: url('${require('@/assets/right-arrow.svg')}'); background-size: contain; background-repeat: no-repeat`"
-        >Next</button>
-      </div>
-    </div>
-        </div>
   </section>
 </template>
 <script>
