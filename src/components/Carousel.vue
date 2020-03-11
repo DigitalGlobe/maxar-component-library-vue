@@ -128,18 +128,22 @@ export default {
 
     .slide {
       transition: transform 0.4s ease-in-out;
-      transform: translateX(-100%);
       height: 0;
       width: 0;
+      @media (min-width: 1024px) {
+        transform: translateX(-100%);
+      }
       img {
         display: block;
         height: 100%;
         width: 100%;
       }
       &.active {
-        transform: translateX(0%);
         height: 100%;
         width: 100%;
+        @media (min-width: 1024px) {
+          transform: translateX(0%);
+        }
       }
     }
   }
