@@ -42,10 +42,10 @@ The Maxar Component library is available as an [npm package](https://www.npmjs.c
 
 ```
 // with npm 
-npm install maxar-vue-components 
+npm install DigitalGlobe/maxar-component-library-vue --save-dev
 
 // with yarn 
-yarn add maxar-vue-components
+yarn add DigitalGlobe/maxar-component-library-vue -D
 ```
 
 #### Vue.js
