@@ -4,8 +4,8 @@
     <MaxarLogo />
     <Hero :hero="hero" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
-    <HeadlineCopy :headlineCopy="headlineCopy2" />
-    <HeadlineCopy :headlineCopy="headlineCopy3" />
+    <HeadlineCopy :headlineCopy="headlineCopy2" class="dark_grey" />
+    <HeadlineCopy :headlineCopy="headlineCopy3" class="light_grey" />
     <MasonryGrid :masonryGrid="masonryGrid" />
     <ThreeQuarters :threeQuarters="threeQuarters" />
     <TwoColumn :twoColumn="twoColumn" />

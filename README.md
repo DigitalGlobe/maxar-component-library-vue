@@ -104,6 +104,15 @@ There are some base styles in `src/scss` which get compiled alongside component-
 
 When we run `npm run build-library`, one of the generated files is `dist/maxar.css`, which you can import as plain old CSS wherever needed. This provides some easier flexibility for importing the Maxar styles to a variety of build processes. 
 
+#### Background colors
+
+You can add a `class` attribute to components in Vue, so if you want the `dark_grey` or `light_grey` classes, you can accomplish that like so: 
+
+```
+<SomeMaxarVueComponent class="dark_grey" />
+<SomeMaxarVueComponent class="light_grey" />
+```
+
 #### Tree-shaking 
 
 If we want to add tree-shaking, we could create a build process that conditionally scopes styles.
