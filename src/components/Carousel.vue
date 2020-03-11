@@ -278,12 +278,6 @@ export default {
         top: 0;
         width: 16px;
       }
-      .nextButton:before {
-        background-image: url("/right-arrow.svg");
-      }
-      .previousButton:before {
-        background-image: url("/left-arrow.svg");
-      }
     }
   }
 }
