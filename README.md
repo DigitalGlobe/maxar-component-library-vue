@@ -467,3 +467,49 @@ twoColumnTallIcons: {
   ]
 }
 ```
+
+### MultiLink
+
+* prop: `multiLink`
+
+```js
+multiLink: {
+  links: [
+    {
+      link: "https://www.maxar.com/products/use-cases#explore",
+      heading: "Explore",
+      copy:
+        "<p>Design, build and deploy resilient space infrastructure for any mission</p>",
+      isExternal: true
+    },
+    {
+      link: "https://www.maxar.com/products/use-cases#connect",
+      heading: "Connect",
+      copy:
+        "<p>Deploy cutting-edge systems for communications and data from or across space</p>",
+      isExternal: true
+    },
+    {
+      link: "https://www.maxar.com/products/use-cases#access",
+      heading: "Access",
+      copy:
+        "<p>Identify, understand and address change with accurate geospatial information</p>",
+      isExternal: true
+    },
+    {
+      link: "https://www.maxar.com/products/use-cases#map",
+      heading: "Map",
+      copy:
+        "<p>Create and customize maps with professional-grade imagery mosaics and information layers</p>",
+      isExternal: true
+    },
+    {
+      link: "https://www.maxar.com/products/use-cases#analyze",
+      heading: "Analyze",
+      copy:
+        "<p>Reveal patterns, detect objects and extract geospatial insight at scale</p>",
+      isExternal: true
+    }
+  ]
+}
+```
