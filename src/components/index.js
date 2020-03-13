@@ -15,6 +15,7 @@ import IconBlock from "./IconBlock.vue";
 import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./FullWidthHeightImage.vue";
 import WistiaVideo from "./WistiaVideo.vue";
+import MultiLink from "./MultiLink.vue";
 
 const Components = {
     Hero,
@@ -32,7 +33,8 @@ const Components = {
     IconBlock,
     TwoColumnTallIcons,
     FullWidthHeightImage,
-    WistiaVideo
+    WistiaVideo,
+    MultiLink
 }
 
 Object.keys(Components).forEach(name => {
