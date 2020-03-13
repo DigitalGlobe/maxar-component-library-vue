@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Carousel :carousel="carousel" />
     <MaxarLogo />
     <Hero :hero="hero" />
+    <MultiLink :multiLink="multiLink" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
     <HeadlineCopy :headlineCopy="headlineCopy2" class="dark_grey" />
     <HeadlineCopy :headlineCopy="headlineCopy3" class="light_grey" />
@@ -16,6 +16,7 @@
     <IconBlock :iconBlock="iconBlock" />
     <TwoColumnTallIcons :twoColumnTallIcons="twoColumnTallIcons" />
     <FullWidthHeightImage :fullWidthHeightImage="fullWidthHeightImage" />
+    <Carousel :carousel="carousel" />
     <WistiaVideo :wistiaVideo="wistiaVideo" />
     <FullColorCta :fullColorCta="fullColorCta" />
   </div>
@@ -38,6 +39,7 @@ import IconBlock from "./components/IconBlock.vue";
 import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
 import WistiaVideo from "./components/WistiaVideo.vue";
+import MultiLink from "./components/MultiLink.vue";
 
 export default {
   name: "App",
@@ -57,7 +59,8 @@ export default {
     IconBlock,
     TwoColumnTallIcons,
     FullWidthHeightImage,
-    WistiaVideo
+    WistiaVideo,
+    MultiLink
   },
   data: function() {
     return {
@@ -243,7 +246,8 @@ export default {
             imageUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/646/regular_WorldView-Legion_6-satellites_2x.jpg",
             heading: "New on the blog",
-            body: "<p>Enhancing national security missions with WorldView Legion</p>",
+            body:
+              "<p>Enhancing national security missions with WorldView Legion</p>",
             buttonEnabled: true,
             buttonLink: "http://blog.maxar.com",
             buttonIsExternal: true,
@@ -331,36 +335,86 @@ export default {
         bullets: [
           {
             heading: "Competitive salary",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/496/Path_603.jpg",
-            copy: "We competitively structure our salaries based on a number of factors including the responsibilities you will have as well as the current market conditions in the region."
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/496/Path_603.jpg",
+            copy:
+              "We competitively structure our salaries based on a number of factors including the responsibilities you will have as well as the current market conditions in the region."
           },
           {
             heading: "Compehensive health plan",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/497/Group_1092.png",
-            copy: "We offer comprehensive health coverage, health and wellness programs and on-site fitness centers (at some locations) to keep you and your family healthy. This includes medical, dental and vision insurance, along with flexible spending accounts, life insurance, pet insurance and more."
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/497/Group_1092.png",
+            copy:
+              "We offer comprehensive health coverage, health and wellness programs and on-site fitness centers (at some locations) to keep you and your family healthy. This includes medical, dental and vision insurance, along with flexible spending accounts, life insurance, pet insurance and more."
           },
           {
             heading: "401K retirement benefits",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/498/Group_1093.png",
-            copy: "We help you prepare for your future by offering an employee match on your contributions up to 4 percent of your salary which is immediately vested."
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/498/Group_1093.png",
+            copy:
+              "We help you prepare for your future by offering an employee match on your contributions up to 4 percent of your salary which is immediately vested."
           },
           {
             heading: "Generous time off policy",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/499/Group_1094.png",
-            copy: "We value a healthy work-life balance. We have a flexible leave policy so you can take the time you need off, when you need it, with your manager's approval. In addition, we have leave policies to support parental leave, military duty, bereavement, jury duty and disability."
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/499/Group_1094.png",
+            copy:
+              "We value a healthy work-life balance. We have a flexible leave policy so you can take the time you need off, when you need it, with your manager's approval. In addition, we have leave policies to support parental leave, military duty, bereavement, jury duty and disability."
           },
           {
             heading: "Tuition reimbursement & loan repayment",
-            iconUrl: "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/500/Group_1095.png",
-            copy: "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry."
+            iconUrl:
+              "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/500/Group_1095.png",
+            copy:
+              "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry."
           }
         ]
       },
       fullWidthHeightImage: {
-        imageUrl: 'https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg'
+        imageUrl:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg"
       },
       wistiaVideo: {
-        wistiaId: 'n0u0wusht0'
+        wistiaId: "n0u0wusht0"
+      },
+      multiLink: {
+        links: [
+          {
+            link: "https://www.maxar.com/products/use-cases#explore",
+            heading: "Explore",
+            copy:
+              "<p>Design, build and deploy resilient space infrastructure for any mission</p>",
+            isExternal: true
+          },
+          {
+            link: "https://www.maxar.com/products/use-cases#connect",
+            heading: "Connect",
+            copy:
+              "<p>Deploy cutting-edge systems for communications and data from or across space</p>",
+            isExternal: true
+          },
+          {
+            link: "https://www.maxar.com/products/use-cases#access",
+            heading: "Access",
+            copy:
+              "<p>Identify, understand and address change with accurate geospatial information</p>",
+            isExternal: true
+          },
+          {
+            link: "https://www.maxar.com/products/use-cases#map",
+            heading: "Map",
+            copy:
+              "<p>Create and customize maps with professional-grade imagery mosaics and information layers</p>",
+            isExternal: true
+          },
+          {
+            link: "https://www.maxar.com/products/use-cases#analyze",
+            heading: "Analyze",
+            copy:
+              "<p>Reveal patterns, detect objects and extract geospatial insight at scale</p>",
+            isExternal: true
+          }
+        ]
       }
     };
   }
