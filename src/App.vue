@@ -67,9 +67,20 @@ export default {
       navbar: {
         links: [
           {
-            link: '/',
-            title: 'Home',
-            isExternal: false
+            link: "/",
+            title: "Home",
+            isExternal: false,
+            type: "top-level"
+          },
+          {
+            label: "Single column",
+            type: "single",
+            links: [
+              {
+                label: 'Link one',
+                link: 'https://www.maxar.com'
+              }
+            ]
           }
         ]
       },

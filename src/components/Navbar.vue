@@ -13,10 +13,13 @@
       <ul class="navbar__categories">
         <li v-for="link in navbar.links" :key="link" class="navbar__categories__list-item">
           <a
+            v-if="link.type === 'top-level'"
             class="navbar__categories__header"
             :href="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
           >{{link.title}}</a>
+          <SingleColumnPanel v-if="link.type==='single'" :node="link" />
+          <!-- <span v-if="link.type==='multi'">Multi here</span> -->
         </li>
       </ul>
     </div>
@@ -25,6 +28,7 @@
 
 <script>
 import MaxarLogo from "./MaxarLogo.vue";
+import SingleColumnPanel from "./Navbar/SingleColumnPanel.vue";
 export default {
   data: function() {
     return {
@@ -35,12 +39,13 @@ export default {
   },
   props: ["navbar"],
   components: {
-    MaxarLogo
+    MaxarLogo,
+    SingleColumnPanel
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 nav {
   display: flex;
   flex-wrap: wrap;
