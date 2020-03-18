@@ -1,7 +1,7 @@
 <template>
   <div class="navbar__single-col-panel">
     <span class="navbar__categories__header">{{node.label}}</span>
-    <div class="navbar__single-col navbar__category">
+    <div :class="`navbar__single-col navbar__category ${active ? 'navbar__category--active' : ''}`">
       <h3>{{node.label}}</h3>
       <hr />
       <ul>
