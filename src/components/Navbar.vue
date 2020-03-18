@@ -19,7 +19,7 @@
             :target="link.isExternal ? '_blank' : '_self'"
           >{{link.title}}</a>
           <SingleColumnPanel v-if="link.type==='single'" :node="link" />
-          <!-- <span v-if="link.type==='multi'">Multi here</span> -->
+          <MultiColumnPanel v-if="link.type==='multi'" :node="link" />
         </li>
       </ul>
     </div>
@@ -29,6 +29,8 @@
 <script>
 import MaxarLogo from "./MaxarLogo.vue";
 import SingleColumnPanel from "./Navbar/SingleColumnPanel.vue";
+import MultiColumnPanel from "./Navbar/MultiColumnPanel.vue";
+
 export default {
   data: function() {
     return {
@@ -40,7 +42,8 @@ export default {
   props: ["navbar"],
   components: {
     MaxarLogo,
-    SingleColumnPanel
+    SingleColumnPanel,
+    MultiColumnPanel
   }
 };
 </script>
@@ -157,6 +160,7 @@ nav ul {
 }
 
 .navbar__categories__header {
+  color: black;
   cursor: pointer;
   display: block;
   padding: $base_space;

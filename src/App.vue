@@ -77,8 +77,32 @@ export default {
             type: "single",
             links: [
               {
-                label: 'Link one',
-                link: 'https://www.maxar.com'
+                label: "Link one",
+                link: "https://www.maxar.com"
+              }
+            ]
+          },
+          {
+            label: "Multi column",
+            type: "multi",
+            columns: [
+              {
+                label: "Column one",
+                links: [
+                  {
+                    label: "Col one link one",
+                    link: "https://www.maxar.com"
+                  }
+                ]
+              },
+              {
+                label: "Column two",
+                links: [
+                  {
+                    label: "Col two link one",
+                    link: "https://www.maxar.com"
+                  }
+                ]
               }
             ]
           }
