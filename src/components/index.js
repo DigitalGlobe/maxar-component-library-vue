@@ -16,6 +16,7 @@ import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./FullWidthHeightImage.vue";
 import WistiaVideo from "./WistiaVideo.vue";
 import MultiLink from "./MultiLink.vue";
+import Navbar from "./Navbar.vue";
 
 const Components = {
     Hero,
@@ -34,7 +35,8 @@ const Components = {
     TwoColumnTallIcons,
     FullWidthHeightImage,
     WistiaVideo,
-    MultiLink
+    MultiLink,
+    Navbar
 }
 
 Object.keys(Components).forEach(name => {

@@ -1,5 +1,5 @@
 <template>
-<svg xmlns="http://www.w3.org/2000/svg" width="228" height="41">
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="41" viewBox="0 0 228 41">
   <g data-name="Group 900">
     <path data-name="Path 512" d="M130 40.999h9v-9l-32-32h-9v9l11 12-11 11v9h9l11-11z" fill="#fdb913"/>
     <g data-name="Group 899">
