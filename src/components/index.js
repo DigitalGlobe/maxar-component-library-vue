@@ -16,7 +16,7 @@ import TwoColumnTallIcons from "./TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./FullWidthHeightImage.vue";
 import WistiaVideo from "./WistiaVideo.vue";
 import MultiLink from "./MultiLink.vue";
-import Navbar from "./Navbar.vue";
+import Navbar from "./Navbar/Navbar.vue";
 
 const Components = {
     Hero,

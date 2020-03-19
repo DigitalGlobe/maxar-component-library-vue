@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
+import Navbar from "./components/Navbar/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import HeadlineCopy from "./components/HeadlineCopy.vue";
 import MasonryGrid from "./components/MasonryGrid.vue";

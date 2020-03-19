@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import MaxarLogo from "./MaxarLogo.vue";
-import SingleColumnPanel from "./Navbar/SingleColumnPanel.vue";
-import MultiColumnPanel from "./Navbar/MultiColumnPanel.vue";
+import MaxarLogo from "../MaxarLogo.vue";
+import SingleColumnPanel from "./SingleColumnPanel.vue";
+import MultiColumnPanel from "./MultiColumnPanel.vue";
 
 export default {
   data: function() {
