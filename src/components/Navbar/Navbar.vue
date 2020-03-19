@@ -286,6 +286,7 @@ nav ul {
   }
 
   .navbar__categories__header {
+    color: white;
     padding: $half_space;
     padding-left: 0;
     position: relative;
