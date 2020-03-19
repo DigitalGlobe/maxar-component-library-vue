@@ -1,8 +1,8 @@
 <template>
   <div class="navbar__single-col-panel">
     <span
-      @mousedown="handleMouseDown"
       @keydown="handleKeydown"
+      @mousedown="handleMouseDown"
       :class="`navbar__categories__header ${activePanel === node.label ? 'navbar__categories__header--active' : ''}`"
     >{{node.label}}</span>
     <div
@@ -33,9 +33,7 @@ export default {
       }
     },
     handleMouseDown: function() {
-      if (this.activePanel === this.node.label) {
-        this.$emit("toggleActive", this.node.label);
-      }
+      this.$emit("toggleActive", this.node.label);
     }
   },
   props: ["node", "activePanel"]

@@ -11,7 +11,13 @@
     ></button>
     <div :class="active ? 'navbar navbar--active' : 'navbar'">
       <ul class="navbar__categories">
-        <li v-for="link in navbar.links" :key="link.label" class="navbar__categories__list-item">
+        <li
+                  @focus="handleToggleActivePanel(link.label)"
+          :key="link.label"
+          class="navbar__categories__list-item"
+tabindex="0"
+          v-for="link in navbar.links"
+        >
           <a
             v-if="link.type === 'top-level'"
             class="navbar__categories__header"
@@ -19,7 +25,6 @@
             :target="link.isExternal ? '_blank' : '_self'"
           >{{link.title}}</a>
           <SingleColumnPanel
-            @focus.native="handleToggleActivePanel(link.label)"
             :activePanel="activePanel"
             :node="link"
             tabindex="0"
@@ -27,7 +32,6 @@
             v-on:toggleActive="handleToggleActivePanel"
           />
           <MultiColumnPanel
-            @focus.native="handleToggleActivePanel(link.label)"
             :activePanel="activePanel"
             :node="link"
             tabindex="0"
@@ -61,9 +65,6 @@ export default {
     MultiColumnPanel
   },
   methods: {
-    handlePanelFocus: function(event) {
-      console.log(event.type);
-    },
     handleToggleActivePanel: function(emitter) {
       console.log(emitter);
       if (this.activePanel === emitter) {
