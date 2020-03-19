@@ -19,6 +19,7 @@
             :target="link.isExternal ? '_blank' : '_self'"
           >{{link.title}}</a>
           <SingleColumnPanel
+            @focus.native="handleToggleActivePanel(link.label)"
             :activePanel="activePanel"
             :node="link"
             tabindex="0"
@@ -26,6 +27,7 @@
             v-on:toggleActive="handleToggleActivePanel"
           />
           <MultiColumnPanel
+            @focus.native="handleToggleActivePanel(link.label)"
             :activePanel="activePanel"
             :node="link"
             tabindex="0"

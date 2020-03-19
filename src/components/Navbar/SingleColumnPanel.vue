@@ -1,6 +1,7 @@
 <template>
   <div class="navbar__single-col-panel">
     <span
+      @focus="$emit('toggleActive', node.label)"
       @click="$emit('toggleActive', node.label)"
       :class="`navbar__categories__header ${activePanel === node.label ? 'navbar__categories__header--active' : ''}`"
     >{{node.label}}</span>
