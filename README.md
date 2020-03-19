@@ -589,7 +589,7 @@ navbar: {
 },
 ```
 
-#### Panel children 
+#### Navbar children 
 
 The Navbar component has both `MultiColumnPanel` and `SingleColumnPanel` children components. They both receive two props: 
 
