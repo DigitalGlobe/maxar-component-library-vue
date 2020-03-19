@@ -588,3 +588,13 @@ navbar: {
   ]
 },
 ```
+
+#### Panel children 
+
+The Navbar component has both `MultiColumnPanel` and `SingleColumnPanel` children components. They both receive two props: 
+
+* `category`: data used to inform the labels, links, and other pieces of content in the panel
+* `activePanel`: This tells each child component which panel should be active, managed by the parent `Navbar` component. 
+
+Both have methods to handle keydowns (on enter and space) and mousedowns which emit the `toggleActive` custom event to tell the `Navbar` component to toggle to the correct panel. 
+
