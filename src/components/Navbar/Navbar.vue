@@ -61,6 +61,9 @@ export default {
     MultiColumnPanel
   },
   methods: {
+    handlePanelFocus: function(event) {
+      console.log(event.type);
+    },
     handleToggleActivePanel: function(emitter) {
       console.log(emitter);
       if (this.activePanel === emitter) {

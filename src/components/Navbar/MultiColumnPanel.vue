@@ -1,7 +1,8 @@
 <template>
   <div class="navbar__multi-col-panel">
     <span
-      @click="$emit('toggleActive', node.label)"
+      @mousedown="handleMouseDown"
+      @keydown="handleKeydown"
       :class="`navbar__categories__header ${activePanel === node.label ? 'navbar__categories__header--active' : ''}`"
     >{{node.label}}</span>
     <ul
@@ -23,6 +24,23 @@
 
 <script>
 export default {
+  methods: {
+    handleKeydown: function(event) {
+      const KEY_ENTER = 13;
+      const KEY_SPACE = 32;
+      switch (event.which) {
+        case KEY_ENTER:
+        case KEY_SPACE: {
+          this.$emit("toggleActive", this.node.label);
+        }
+      }
+    },
+    handleMouseDown: function() {
+      if (this.activePanel === this.node.label) {
+        this.$emit("toggleActive", this.node.label);
+      }
+    }
+  },
   props: ["node", "activePanel"]
 };
 </script>
