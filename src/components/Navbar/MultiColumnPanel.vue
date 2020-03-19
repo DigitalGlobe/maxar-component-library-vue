@@ -1,7 +1,12 @@
 <template>
   <div class="navbar__multi-col-panel">
-    <span @click="$emit('toggleActive', node.label)" class="navbar__categories__header">{{node.label}}</span>
-    <ul :class="`navbar__multi-col navbar__category ${activePanel === node.label ? 'navbar__category--active' : ''}`">
+    <span
+      @click="$emit('toggleActive', node.label)"
+      :class="`navbar__categories__header ${activePanel === node.label ? 'navbar__categories__header--active' : ''}`"
+    >{{node.label}}</span>
+    <ul
+      :class="`navbar__multi-col navbar__category ${activePanel === node.label ? 'navbar__category--active' : ''}`"
+    >
       <h3>{{node.label}}</h3>
       <hr />
       <li v-for="column in node.columns" :key="column.label">
