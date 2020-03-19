@@ -65,7 +65,7 @@ export default {
   data: function() {
     return {
       navbar: {
-        links: [
+        categories: [
           {
             link: "/",
             title: "Home",
@@ -78,7 +78,8 @@ export default {
             links: [
               {
                 label: "Link one",
-                link: "https://www.maxar.com"
+                link: "https://www.maxar.com",
+                isExternal: true
               }
             ]
           },
@@ -91,7 +92,8 @@ export default {
                 links: [
                   {
                     label: "Col one link one",
-                    link: "https://www.maxar.com"
+                    link: "https://www.maxar.com",
+                    isExternal: false
                   }
                 ]
               },
@@ -100,7 +102,8 @@ export default {
                 links: [
                   {
                     label: "Col two link one",
-                    link: "https://www.maxar.com"
+                    link: "https://www.maxar.com",
+                    isExternal: true
                   }
                 ]
               }

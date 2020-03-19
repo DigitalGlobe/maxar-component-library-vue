@@ -513,3 +513,78 @@ multiLink: {
   ]
 }
 ```
+
+### Navbar 
+
+The Navbar is not quite 1-to-1 with the Maxar 2.0 version, but it uses most of the decisions described in the [Maxar 2.0 navbar wiki page](https://github.com/DigitalGlobe/maxar_website_v2/wiki/Navbar). 
+
+#### State: 
+
+It manages a few pieces of state: 
+
+* `active`: determines if the navbar gets the `navbar--active` class, which toggles it on mobile views. This piece of state is toggled by the `button` with the `nav-mobile` class. 
+* `activePanel`: keeps track of which specific sub-nav panel is active. This is passed to all `MultiColumnPanel` and `SingleColumnPanel` children. It is manipulated by the `handleToggleActivePanel` method. 
+* `closeIcon`: generated CSS that uses `require` to include the close icon SVG.
+* `hamburgerIcon`: generated CSS that uses `require` to include the hamburger icon SVG.
+
+#### Components
+
+The Navbar uses three child components: 
+
+* `MaxarLogo`: an SVG version of the navbar logo
+* `MultiColumnPanel`: a navbar panel with room for multiple columns of links
+* `SingleColumnPanel`: a panel with room for one column of links
+
+#### Props 
+
+The component takes one prop, `navbar`. It looks like this: 
+
+```js
+navbar: {
+  categories: [
+    {
+      link: "/",
+      title: "Home",
+      isExternal: false,
+      type: "top-level"
+    },
+    {
+      label: "Single column",
+      type: "single",
+      links: [
+        {
+          label: "Single column one",
+          link: "https://www.maxar.com",
+          isExternal: true
+        }
+      ]
+    },
+    {
+      label: "Multi column",
+      type: "multi",
+      columns: [
+        {
+          label: "Column one",
+          links: [
+            {
+              label: "Col one link one",
+              link: "https://www.maxar.com",
+              isExternal: true
+            }
+          ]
+        },
+        {
+          label: "Column two",
+          links: [
+            {
+              label: "Col two link one",
+              link: "https://www.maxar.com",
+              isExternal: false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+```

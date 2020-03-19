@@ -5,37 +5,37 @@
       <MaxarLogo class="navbar__brand" />
     </a>
     <button
-      class="nav-mobile"
       @click="active = !active"
       :style="active ? closeIcon : hamburgerIcon"
+      class="nav-mobile"
     ></button>
     <div :class="active ? 'navbar navbar--active' : 'navbar'">
       <ul class="navbar__categories">
         <li
-                  @focus="handleToggleActivePanel(link.label)"
-          :key="link.label"
+          v-for="category in navbar.categories"
+          :key="category.label"
+          @focus="handleToggleActivePanel(category.label)"
           class="navbar__categories__list-item"
-tabindex="0"
-          v-for="link in navbar.links"
+          tabindex="0"
         >
           <a
-            v-if="link.type === 'top-level'"
+            v-if="category.type === 'top-level'"
+            :href="category.link"
+            :target="category.isExternal ? '_blank' : '_self'"
             class="navbar__categories__header"
-            :href="link.link"
-            :target="link.isExternal ? '_blank' : '_self'"
-          >{{link.title}}</a>
+          >{{category.title}}</a>
           <SingleColumnPanel
+            v-if="category.type==='single'"
             :activePanel="activePanel"
-            :node="link"
+            :category="category"
             tabindex="0"
-            v-if="link.type==='single'"
             v-on:toggleActive="handleToggleActivePanel"
           />
           <MultiColumnPanel
+            v-if="category.type==='multi'"
             :activePanel="activePanel"
-            :node="link"
+            :category="category"
             tabindex="0"
-            v-if="link.type==='multi'"
             v-on:toggleActive="handleToggleActivePanel"
           />
         </li>
@@ -58,22 +58,21 @@ export default {
       hamburgerIcon: `background-image: url('${require("@/assets/hamburger.svg")}'); background-position: center; background-repeat: no-repeat; background-size: contain;`
     };
   },
-  props: ["navbar"],
   components: {
     MaxarLogo,
-    SingleColumnPanel,
-    MultiColumnPanel
+    MultiColumnPanel,
+    SingleColumnPanel
   },
   methods: {
     handleToggleActivePanel: function(emitter) {
-      console.log(emitter);
       if (this.activePanel === emitter) {
         this.activePanel = null;
       } else {
         this.activePanel = emitter;
       }
     }
-  }
+  },
+  props: ["navbar"]
 };
 </script>
 
