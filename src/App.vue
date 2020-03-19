@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MaxarLogo />
+    <Navbar :navbar="navbar" />
     <Hero :hero="hero" />
     <MultiLink :multiLink="multiLink" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
@@ -23,12 +23,12 @@
 </template>
 
 <script>
+import Navbar from "./components/Navbar/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import HeadlineCopy from "./components/HeadlineCopy.vue";
 import MasonryGrid from "./components/MasonryGrid.vue";
 import ThreeQuarters from "./components/ThreeQuarters.vue";
 import TwoColumn from "./components/TwoColumn.vue";
-import MaxarLogo from "./components/MaxarLogo.vue";
 import ThreeCard from "./components/ThreeCard.vue";
 import RevealingStatCards from "./components/RevealingStatCards.vue";
 import Carousel from "./components/Carousel.vue";
@@ -44,12 +44,12 @@ import MultiLink from "./components/MultiLink.vue";
 export default {
   name: "App",
   components: {
+    Navbar,
     Hero,
     HeadlineCopy,
     MasonryGrid,
     ThreeQuarters,
     TwoColumn,
-    MaxarLogo,
     ThreeCard,
     RevealingStatCards,
     Carousel,
@@ -64,6 +64,53 @@ export default {
   },
   data: function() {
     return {
+      navbar: {
+        categories: [
+          {
+            link: "/",
+            title: "Home",
+            isExternal: false,
+            type: "top-level"
+          },
+          {
+            label: "Single column",
+            type: "single",
+            links: [
+              {
+                label: "Link one",
+                link: "https://www.maxar.com",
+                isExternal: true
+              }
+            ]
+          },
+          {
+            label: "Multi column",
+            type: "multi",
+            columns: [
+              {
+                label: "Column one",
+                links: [
+                  {
+                    label: "Col one link one",
+                    link: "https://www.maxar.com",
+                    isExternal: false
+                  }
+                ]
+              },
+              {
+                label: "Column two",
+                links: [
+                  {
+                    label: "Col two link one",
+                    link: "https://www.maxar.com",
+                    isExternal: true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       hero: {
         heading: "Hello, world!",
         subheading: "This is Maxar",
