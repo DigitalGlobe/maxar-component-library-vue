@@ -20,14 +20,16 @@
           >{{link.title}}</a>
           <SingleColumnPanel
             :activePanel="activePanel"
-            v-if="link.type==='single'"
             :node="link"
+            tabindex="0"
+            v-if="link.type==='single'"
             v-on:toggleActive="handleToggleActivePanel"
           />
           <MultiColumnPanel
             :activePanel="activePanel"
-            v-if="link.type==='multi'"
             :node="link"
+            tabindex="0"
+            v-if="link.type==='multi'"
             v-on:toggleActive="handleToggleActivePanel"
           />
         </li>
