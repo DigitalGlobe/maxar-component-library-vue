@@ -11,15 +11,25 @@
     ></button>
     <div :class="active ? 'navbar navbar--active' : 'navbar'">
       <ul class="navbar__categories">
-        <li v-for="link in navbar.links" :key="link" class="navbar__categories__list-item">
+        <li v-for="link in navbar.links" :key="link.label" class="navbar__categories__list-item">
           <a
             v-if="link.type === 'top-level'"
             class="navbar__categories__header"
             :href="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
           >{{link.title}}</a>
-          <SingleColumnPanel v-if="link.type==='single'" :node="link" />
-          <MultiColumnPanel v-if="link.type==='multi'" :node="link" />
+          <SingleColumnPanel
+            :activePanel="activePanel"
+            v-if="link.type==='single'"
+            :node="link"
+            v-on:toggleActive="handleToggleActivePanel"
+          />
+          <MultiColumnPanel
+            :activePanel="activePanel"
+            v-if="link.type==='multi'"
+            :node="link"
+            v-on:toggleActive="handleToggleActivePanel"
+          />
         </li>
       </ul>
     </div>
@@ -35,6 +45,7 @@ export default {
   data: function() {
     return {
       active: false,
+      activePanel: null,
       closeIcon: `background-image: url('${require("@/assets/close.svg")}');  background-position: center; background-repeat: no-repeat; background-size: contain;`,
       hamburgerIcon: `background-image: url('${require("@/assets/hamburger.svg")}'); background-position: center; background-repeat: no-repeat; background-size: contain;`
     };
@@ -44,6 +55,16 @@ export default {
     MaxarLogo,
     SingleColumnPanel,
     MultiColumnPanel
+  },
+  methods: {
+    handleToggleActivePanel: function(emitter) {
+      console.log(emitter);
+      if (this.activePanel === emitter) {
+        this.activePanel = null;
+      } else {
+        this.activePanel = emitter;
+      }
+    }
   }
 };
 </script>
