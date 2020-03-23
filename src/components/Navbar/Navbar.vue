@@ -1,9 +1,9 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <AnchorLinkOrNuxtLink to="/" :nuxt="false">
+    <gi to="/" :nuxt="false">
       <MaxarLogo class="navbar__brand" />
-    </AnchorLinkOrNuxtLink>
+    </gi>
     <button
       @click="active = !active"
       :style="active ? closeIcon : hamburgerIcon"
