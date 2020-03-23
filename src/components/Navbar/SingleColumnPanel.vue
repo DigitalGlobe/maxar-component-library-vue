@@ -12,11 +12,11 @@
       <hr />
       <ul>
         <li v-for="link in category.links" :key="link.link" class="navbar__category__item">
-          <a
+          <link-selector
             class="navbar__link"
-            :href="link.link"
+            :to="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
-          >{{link.label}}</a>
+          >{{link.label}}</link-selector>
         </li>
       </ul>
     </div>
@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import LinkSelector from "../utilities/LinkSelector.vue";
+
 export default {
+  components: {
+    LinkSelector
+  },
   methods: {
     handleKeydown: function(event) {
       const KEY_ENTER = 13;
