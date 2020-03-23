@@ -598,3 +598,16 @@ The Navbar component has both `MultiColumnPanel` and `SingleColumnPanel` childre
 
 Both have methods to handle keydowns (on enter and space) and mousedowns which emit the `toggleActive` custom event to tell the `Navbar` component to toggle to the correct panel. 
 
+## Utilities 
+
+Some components act as utilities within the library itself and are not meant to be exported individually. They live in `src/components/utilities`. 
+
+### AnchorLinkOrNuxtLink
+
+We often use our components in Nuxt projects, which rely on the [nuxt-link component](https://nuxtjs.org/api/components-nuxt-link/). But other times we may choose to ship Vue.js standalone. This acts as a wrapper to give you the option between the two. We use it in the `Navbar` component currently.
+
+The `AnchorLinkOrNuxtLink` component takes three props: 
+
+* `nuxt`: if `nuxt` is `true`, it renders a `nuxt-link`. If not, it renders a regular anchor tag.
+* `target`: acts as the `target` attribute for `nuxt-links` or anchors.
+* `to`: acts as the `href` attribute for anchors, and the `to` prop for `nuxt-links`. 
