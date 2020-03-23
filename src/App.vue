@@ -70,7 +70,8 @@ export default {
             link: "/",
             title: "Home",
             isExternal: false,
-            type: "top-level"
+            type: "top-level",
+            nuxt: false
           },
           {
             label: "Single column",
@@ -79,7 +80,8 @@ export default {
               {
                 label: "Link one",
                 link: "https://www.maxar.com",
-                isExternal: true
+                isExternal: true,
+                nuxt: false
               }
             ]
           },
@@ -93,7 +95,8 @@ export default {
                   {
                     label: "Col one link one",
                     link: "https://www.maxar.com",
-                    isExternal: false
+                    isExternal: false,
+                    nuxt: false
                   }
                 ]
               },
@@ -103,7 +106,8 @@ export default {
                   {
                     label: "Col two link one",
                     link: "https://www.maxar.com",
-                    isExternal: true
+                    isExternal: true,
+                    nuxt: false
                   }
                 ]
               }

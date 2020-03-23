@@ -1,9 +1,9 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <a href="/">
+    <AnchorLinkOrNuxtLink to="/" :nuxt="false">
       <MaxarLogo class="navbar__brand" />
-    </a>
+    </AnchorLinkOrNuxtLink>
     <button
       @click="active = !active"
       :style="active ? closeIcon : hamburgerIcon"
@@ -18,12 +18,13 @@
           class="navbar__categories__list-item"
           tabindex="0"
         >
-          <a
+          <AnchorLinkOrNuxtLink
             v-if="category.type === 'top-level'"
-            :href="category.link"
+            :to="category.link"
             :target="category.isExternal ? '_blank' : '_self'"
+            :nuxt="category.nuxt"
             class="navbar__categories__header"
-          >{{category.title}}</a>
+          >{{category.title}}</AnchorLinkOrNuxtLink>
           <SingleColumnPanel
             v-if="category.type==='single'"
             :activePanel="activePanel"
@@ -45,6 +46,7 @@
 </template>
 
 <script>
+import AnchorLinkOrNuxtLink from "../utilities/AnchorLinkOrNuxtLink.vue";
 import MaxarLogo from "../MaxarLogo.vue";
 import SingleColumnPanel from "./SingleColumnPanel.vue";
 import MultiColumnPanel from "./MultiColumnPanel.vue";
@@ -59,6 +61,7 @@ export default {
     };
   },
   components: {
+    AnchorLinkOrNuxtLink,
     MaxarLogo,
     MultiColumnPanel,
     SingleColumnPanel

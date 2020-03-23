@@ -12,11 +12,12 @@
       <hr />
       <ul>
         <li v-for="link in category.links" :key="link.link" class="navbar__category__item">
-          <a
+          <AnchorLinkOrNuxtLink
             class="navbar__link"
-            :href="link.link"
+            :to="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
-          >{{link.label}}</a>
+            :nuxt="link.nuxt"
+          >{{link.label}}</AnchorLinkOrNuxtLink>
         </li>
       </ul>
     </div>
@@ -24,7 +25,12 @@
 </template>
 
 <script>
+import AnchorLinkOrNuxtLink from "../utilities/AnchorLinkOrNuxtLink.vue";
+
 export default {
+  components: {
+    AnchorLinkOrNuxtLink
+  },
   methods: {
     handleKeydown: function(event) {
       const KEY_ENTER = 13;
