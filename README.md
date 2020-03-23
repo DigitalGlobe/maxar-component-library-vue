@@ -546,7 +546,8 @@ navbar: {
       link: "/",
       title: "Home",
       isExternal: false,
-      type: "top-level"
+      type: "top-level",
+      nuxt: false
     },
     {
       label: "Single column",
@@ -555,7 +556,8 @@ navbar: {
         {
           label: "Single column one",
           link: "https://www.maxar.com",
-          isExternal: true
+          isExternal: true,
+          nuxt: false
         }
       ]
     },
@@ -569,7 +571,8 @@ navbar: {
             {
               label: "Col one link one",
               link: "https://www.maxar.com",
-              isExternal: true
+              isExternal: true,
+              nuxt: false
             }
           ]
         },
@@ -579,7 +582,8 @@ navbar: {
             {
               label: "Col two link one",
               link: "https://www.maxar.com",
-              isExternal: false
+              isExternal: false,
+              nuxt: false
             }
           ]
         }
