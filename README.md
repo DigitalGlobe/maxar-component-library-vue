@@ -48,6 +48,13 @@ npm install DigitalGlobe/maxar-component-library-vue --save-dev
 yarn add DigitalGlobe/maxar-component-library-vue -D
 ```
 
+To update: 
+
+```
+// with yarn
+yarn upgrade maxar-vue-components
+```
+
 #### Vue.js
 
 **TODO:** sample project and setup here. So far we're only really using this with Nuxt anyway.
