@@ -1,7 +1,7 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <AnchorLinkOrNuxtLink to="/" :nuxt="false">
+    <AnchorLinkOrNuxtLink to="/" :nuxt="maxarBrandIsNuxtLink">
       <MaxarLogo class="navbar__brand" />
     </AnchorLinkOrNuxtLink>
     <button
@@ -75,7 +75,7 @@ export default {
       }
     }
   },
-  props: ["navbar"]
+  props: ["maxarBrandIsNuxtLink", "navbar"]
 };
 </script>
 
