@@ -12,11 +12,11 @@
       <hr />
       <ul>
         <li v-for="link in category.links" :key="link.link" class="navbar__category__item">
-          <link-selector
+          <AnchorLinkOrNuxtLink
             class="navbar__link"
             :to="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
-          >{{link.label}}</link-selector>
+          >{{link.label}}</AnchorLinkOrNuxtLink>
         </li>
       </ul>
     </div>
@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import LinkSelector from "../utilities/LinkSelector.vue";
+import AnchorLinkOrNuxtLink from "../utilities/AnchorLinkOrNuxtLink.vue";
 
 export default {
   components: {
-    LinkSelector
+    AnchorLinkOrNuxtLink
   },
   methods: {
     handleKeydown: function(event) {

@@ -1,9 +1,9 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <link-selector to="/" :nuxt="false">
+    <AnchorLinkOrNuxtLink to="/" :nuxt="false">
       <MaxarLogo class="navbar__brand" />
-    </link-selector>
+    </AnchorLinkOrNuxtLink>
     <button
       @click="active = !active"
       :style="active ? closeIcon : hamburgerIcon"
@@ -18,12 +18,12 @@
           class="navbar__categories__list-item"
           tabindex="0"
         >
-          <link-selector 
+          <AnchorLinkOrNuxtLink
             v-if="category.type === 'top-level'"
-            :href="category.link"
+            :to="category.link"
             :target="category.isExternal ? '_blank' : '_self'"
             class="navbar__categories__header"
-          >{{category.title}}</link-selector >
+          >{{category.title}}</AnchorLinkOrNuxtLink>
           <SingleColumnPanel
             v-if="category.type==='single'"
             :activePanel="activePanel"
@@ -45,10 +45,10 @@
 </template>
 
 <script>
+import AnchorLinkOrNuxtLink from "../utilities/AnchorLinkOrNuxtLink.vue";
 import MaxarLogo from "../MaxarLogo.vue";
 import SingleColumnPanel from "./SingleColumnPanel.vue";
 import MultiColumnPanel from "./MultiColumnPanel.vue";
-import LinkSelector from "../utilities/LinkSelector.vue";
 
 export default {
   data: function() {
@@ -60,10 +60,10 @@ export default {
     };
   },
   components: {
+    AnchorLinkOrNuxtLink,
     MaxarLogo,
     MultiColumnPanel,
-    SingleColumnPanel,
-    LinkSelector
+    SingleColumnPanel
   },
   methods: {
     handleToggleActivePanel: function(emitter) {
@@ -72,7 +72,7 @@ export default {
       } else {
         this.activePanel = emitter;
       }
-    },
+    }
   },
   props: ["navbar", "nuxt"]
 };
