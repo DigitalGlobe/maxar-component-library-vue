@@ -16,6 +16,7 @@
           <li v-for="link in column.links" :key="link.link" class="multi-col__category__item">
             <AnchorLinkOrNuxtLink
               class="navbar__link"
+              :nuxt="link.nuxt"
               :to="link.link"
               :target="link.isExternal ? '_blank' : '_self'"
             >{{link.label}}</AnchorLinkOrNuxtLink>

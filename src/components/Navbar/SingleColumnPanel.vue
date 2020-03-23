@@ -16,6 +16,7 @@
             class="navbar__link"
             :to="link.link"
             :target="link.isExternal ? '_blank' : '_self'"
+            :nuxt="link.nuxt"
           >{{link.label}}</AnchorLinkOrNuxtLink>
         </li>
       </ul>

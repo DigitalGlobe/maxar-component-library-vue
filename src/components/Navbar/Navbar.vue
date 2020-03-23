@@ -22,6 +22,7 @@
             v-if="category.type === 'top-level'"
             :to="category.link"
             :target="category.isExternal ? '_blank' : '_self'"
+            :nuxt="category.nuxt"
             class="navbar__categories__header"
           >{{category.title}}</AnchorLinkOrNuxtLink>
           <SingleColumnPanel
@@ -74,7 +75,7 @@ export default {
       }
     }
   },
-  props: ["navbar", "nuxt"]
+  props: ["navbar"]
 };
 </script>
 
