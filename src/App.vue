@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar :navbar="navbar" />
+    <Navbar :navbar="navbar" :nuxt="true" />
     <Hero :hero="hero" />
     <MultiLink :multiLink="multiLink" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />

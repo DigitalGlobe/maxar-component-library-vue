@@ -1,9 +1,9 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <a href="/">
+    <link-selector to="/" :nuxt="false">
       <MaxarLogo class="navbar__brand" />
-    </a>
+    </link-selector>
     <button
       @click="active = !active"
       :style="active ? closeIcon : hamburgerIcon"
@@ -18,12 +18,12 @@
           class="navbar__categories__list-item"
           tabindex="0"
         >
-          <a
+          <link-selector 
             v-if="category.type === 'top-level'"
             :href="category.link"
             :target="category.isExternal ? '_blank' : '_self'"
             class="navbar__categories__header"
-          >{{category.title}}</a>
+          >{{category.title}}</link-selector >
           <SingleColumnPanel
             v-if="category.type==='single'"
             :activePanel="activePanel"
@@ -48,6 +48,7 @@
 import MaxarLogo from "../MaxarLogo.vue";
 import SingleColumnPanel from "./SingleColumnPanel.vue";
 import MultiColumnPanel from "./MultiColumnPanel.vue";
+import LinkSelector from "../utilities/LinkSelector.vue";
 
 export default {
   data: function() {
@@ -61,7 +62,8 @@ export default {
   components: {
     MaxarLogo,
     MultiColumnPanel,
-    SingleColumnPanel
+    SingleColumnPanel,
+    LinkSelector
   },
   methods: {
     handleToggleActivePanel: function(emitter) {
@@ -70,9 +72,9 @@ export default {
       } else {
         this.activePanel = emitter;
       }
-    }
+    },
   },
-  props: ["navbar"]
+  props: ["navbar", "nuxt"]
 };
 </script>
 
