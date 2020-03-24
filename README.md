@@ -544,9 +544,8 @@ The Navbar uses three child components:
 
 #### Props 
 
-The component takes two props: 
+The component takes one prop: 
 
-* `maxarBrandIsNuxtLink`: determines if the Maxar logo brand is a `nuxt-link` or regular anchor. 
 * `navbar`: data object for the component. Looks like this: 
 
 ```js

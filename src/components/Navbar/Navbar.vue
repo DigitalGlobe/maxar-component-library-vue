@@ -1,7 +1,7 @@
 <template>
   <nav class="applicationNavbar">
     <div class="navbg"></div>
-    <AnchorLinkOrNuxtLink to="/" :nuxt="maxarBrandIsNuxtLink">
+    <AnchorLinkOrNuxtLink to="/">
       <MaxarLogo class="navbar__brand" />
     </AnchorLinkOrNuxtLink>
     <button
