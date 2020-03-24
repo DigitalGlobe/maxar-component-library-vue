@@ -548,6 +548,7 @@ The component takes two props:
 
 * `maxarBrandIsNuxtLink`: determines if the Maxar logo brand is a `nuxt-link` or regular anchor. 
 * `navbar`: data object for the component. Looks like this: 
+
 ```js
 navbar: {
   categories: [
@@ -556,7 +557,6 @@ navbar: {
       title: "Home",
       isExternal: false,
       type: "top-level",
-      nuxt: false
     },
     {
       label: "Single column",
@@ -566,7 +566,6 @@ navbar: {
           label: "Single column one",
           link: "https://www.maxar.com",
           isExternal: true,
-          nuxt: false
         }
       ]
     },
@@ -581,7 +580,6 @@ navbar: {
               label: "Col one link one",
               link: "https://www.maxar.com",
               isExternal: true,
-              nuxt: false
             }
           ]
         },
@@ -592,7 +590,6 @@ navbar: {
               label: "Col two link one",
               link: "https://www.maxar.com",
               isExternal: false,
-              nuxt: false
             }
           ]
         }
@@ -619,8 +616,9 @@ Some components act as utilities within the library itself and are not meant to 
 
 We often use our components in Nuxt projects, which rely on the [nuxt-link component](https://nuxtjs.org/api/components-nuxt-link/). But other times we may choose to ship Vue.js standalone. This acts as a wrapper to give you the option between the two. We use it in the `Navbar` component currently.
 
-The `AnchorLinkOrNuxtLink` component takes three props: 
+The `AnchorLinkOrNuxtLink` component takes two props: 
 
-* `nuxt`: if `nuxt` is `true`, it renders a `nuxt-link`. If not, it renders a regular anchor tag.
 * `target`: acts as the `target` attribute for `nuxt-links` or anchors.
 * `to`: acts as the `href` attribute for anchors, and the `to` prop for `nuxt-links`. 
+
+It then checks if `this.$nuxt` is true and if its `to` prop begins with `/`, indicating a relative link. If both of those are true, it renders a `nuxt-link`. If not, it renders an `a` tag. 
