@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar :navbar="navbar" />
+    <HomeHero :homeHero="homeHero" />
     <Hero :hero="hero" />
     <MultiLink :multiLink="multiLink" />
     <HeadlineCopy :headlineCopy="headlineCopy1" />
@@ -40,6 +41,7 @@ import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
 import WistiaVideo from "./components/WistiaVideo.vue";
 import MultiLink from "./components/MultiLink.vue";
+import HomeHero from "./components/HomeHero.vue";
 
 export default {
   name: "App",
@@ -60,7 +62,8 @@ export default {
     TwoColumnTallIcons,
     FullWidthHeightImage,
     WistiaVideo,
-    MultiLink
+    MultiLink,
+    HomeHero
   },
   data: function() {
     return {
@@ -70,7 +73,7 @@ export default {
             link: "/",
             title: "Home",
             isExternal: false,
-            type: "top-level",
+            type: "top-level"
           },
           {
             label: "Single column",
@@ -79,7 +82,7 @@ export default {
               {
                 label: "Link one",
                 link: "https://www.maxar.com",
-                isExternal: true,
+                isExternal: true
               }
             ]
           },
@@ -93,7 +96,7 @@ export default {
                   {
                     label: "Col one link one",
                     link: "https://www.maxar.com",
-                    isExternal: false,
+                    isExternal: false
                   }
                 ]
               },
@@ -103,13 +106,24 @@ export default {
                   {
                     label: "Col two link one",
                     link: "https://www.maxar.com",
-                    isExternal: true,
+                    isExternal: true
                   }
                 ]
               }
             ]
           }
         ]
+      },
+      homeHero: {
+        heading: "Improving life on Earth from space",
+        subHeading:
+          "We make global change visible, information actionable and space accessible.",
+        buttonEnabled: true,
+        link: "https://www.maxar.com/splash/worldview-legion",
+        buttonIsExternal: true,
+        buttonText: "Learn more",
+        image:
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg"
       },
       hero: {
         heading: "Hello, world!",

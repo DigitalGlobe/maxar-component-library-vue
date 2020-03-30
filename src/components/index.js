@@ -17,6 +17,7 @@ import FullWidthHeightImage from "./FullWidthHeightImage.vue";
 import WistiaVideo from "./WistiaVideo.vue";
 import MultiLink from "./MultiLink.vue";
 import Navbar from "./Navbar/Navbar.vue";
+import HomeHero from "./HomeHero.vue";
 
 const Components = {
     Hero,
@@ -36,7 +37,8 @@ const Components = {
     FullWidthHeightImage,
     WistiaVideo,
     MultiLink,
-    Navbar
+    Navbar,
+    HomeHero
 }
 
 Object.keys(Components).forEach(name => {
