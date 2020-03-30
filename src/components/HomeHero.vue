@@ -2,7 +2,7 @@
   <section class="HomeHeroComponent edge_to_edge">
     <div class="HomeHeroComponent__copy">
       <h1>{{ homeHero.heading}}</h1>
-      <p>{{ homeHero.heading}}</p>
+      <p>{{ homeHero.subHeading}}</p>
       <a
         v-if="homeHero.buttonEnabled"
         :href="homeHero.link"
