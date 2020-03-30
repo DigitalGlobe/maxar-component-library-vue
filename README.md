@@ -475,6 +475,22 @@ twoColumnTallIcons: {
 }
 ```
 
+### HomeHero 
+
+* prop: `homeHero`:
+
+homeHero: {
+  heading: "Improving life on Earth from space",
+  subHeading:
+    "We make global change visible, information actionable and space accessible.",
+  buttonEnabled: true,
+  link: "https://www.maxar.com/splash/worldview-legion",
+  buttonIsExternal: true,
+  buttonText: "Learn more",
+  image:
+    "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg"
+},
+
 ### MultiLink
 
 * prop: `multiLink`
