@@ -40,6 +40,7 @@ import TwoColumnTallIcons from "./components/TwoColumnTallIcons.vue";
 import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
 import WistiaVideo from "./components/WistiaVideo.vue";
 import MultiLink from "./components/MultiLink.vue";
+import HomeHero from "./components/HomeHero.vue";
 
 export default {
   name: "App",
@@ -60,7 +61,8 @@ export default {
     TwoColumnTallIcons,
     FullWidthHeightImage,
     WistiaVideo,
-    MultiLink
+    MultiLink,
+    HomeHero
   },
   data: function() {
     return {
