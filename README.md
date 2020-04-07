@@ -31,6 +31,14 @@ npm run test
 npm run lint
 ```
 
+### Deployment
+
+Tyler has a private repo set up to push to Netlify. Eventually we should request Netlify access for DigitalGlobe if we like Netlify. Tyler can push to it with:
+
+```
+git push netlify master
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
