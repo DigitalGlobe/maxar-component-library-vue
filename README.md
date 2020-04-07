@@ -111,6 +111,10 @@ Now you can use the components. For example, in `pages/index.vue`, all you need 
 
 And the `MaxarLogo` component will render in your template. (Which is possible since the logo is SVG!).
 
+### Fonts
+
+This package includes the font files. When you install it, they'll end up in `node_modules/maxar-vue-components/public/fonts`. For now, the easiest way to use them is to copy that folder into the local public folder. The styles look for the fonts at the relative `/fonts` URL.
+
 ### Styles
 
 This package is meant to be used as a component library in Vue. But you can also use it as a CSS library as well and bring your own markup or front-end framework/templating. 
