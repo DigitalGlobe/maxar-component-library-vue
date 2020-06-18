@@ -1,6 +1,6 @@
 {
   "name": "maxar-vue-components",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "./dist/maxar.common.js",
   "files": [
     "dist/*",
