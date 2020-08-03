@@ -13,7 +13,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-library": "vue-cli-service build --target lib --name maxar ./src/components/index.js"
+    "build-library": "vue-cli-service build --target lib --name maxar 'src/components/index.js' --inline-vue",
+    "build-wc": "vue-cli-service build --target wc --name maxar-map './src/components/Maps/*.vue'"
   },
   "dependencies": {
     "core-js": "^3.6.4",

@@ -18,8 +18,9 @@ import WistiaVideo from "./WistiaVideo.vue";
 import MultiLink from "./MultiLink.vue";
 import Navbar from "./Navbar/Navbar.vue";
 import HomeHero from "./HomeHero.vue";
+import MaxarMap from "./Maps/MaxarMap.vue";
 
-const Components = {
+const Maxar = {
     Hero,
     HeadlineCopy,
     MasonryGrid,
@@ -38,11 +39,12 @@ const Components = {
     WistiaVideo,
     MultiLink,
     Navbar,
-    HomeHero
+    HomeHero, 
+    MaxarMap
 }
 
-Object.keys(Components).forEach(name => {
-    Vue.component(name, Components[name]);
+Object.keys(Maxar).forEach(name => {
+    Vue.component(name, Maxar[name]);
 });
 
-export default Components;
+export default Maxar;
