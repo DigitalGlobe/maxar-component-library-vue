@@ -20,6 +20,7 @@
     <Carousel :carousel="carousel" />
     <WistiaVideo :wistiaVideo="wistiaVideo" />
     <FullColorCta :fullColorCta="fullColorCta" />
+    <MapNav :navbar="mapNav" />
   </div>
 </template>
 
@@ -42,6 +43,7 @@ import FullWidthHeightImage from "./components/FullWidthHeightImage.vue";
 import WistiaVideo from "./components/WistiaVideo.vue";
 import MultiLink from "./components/MultiLink.vue";
 import HomeHero from "./components/HomeHero.vue";
+import MapNav from "./components/Maps/MapNav";
 
 export default {
   name: "App",
@@ -63,9 +65,10 @@ export default {
     FullWidthHeightImage,
     WistiaVideo,
     MultiLink,
-    HomeHero
+    HomeHero,
+    MapNav,
   },
-  data: function() {
+  data: function () {
     return {
       navbar: {
         categories: [
@@ -73,7 +76,7 @@ export default {
             link: "/",
             title: "Home",
             isExternal: false,
-            type: "top-level"
+            type: "top-level",
           },
           {
             label: "Single column",
@@ -82,9 +85,9 @@ export default {
               {
                 label: "Link one",
                 link: "https://www.maxar.com",
-                isExternal: true
-              }
-            ]
+                isExternal: true,
+              },
+            ],
           },
           {
             label: "Multi column",
@@ -96,9 +99,9 @@ export default {
                   {
                     label: "Col one link one",
                     link: "https://www.maxar.com",
-                    isExternal: false
-                  }
-                ]
+                    isExternal: false,
+                  },
+                ],
               },
               {
                 label: "Column two",
@@ -106,13 +109,13 @@ export default {
                   {
                     label: "Col two link one",
                     link: "https://www.maxar.com",
-                    isExternal: true
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    isExternal: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       homeHero: {
         heading: "Improving life on Earth from space",
@@ -123,7 +126,7 @@ export default {
         buttonIsExternal: true,
         buttonText: "Learn more",
         image:
-          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg"
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg",
       },
       hero: {
         heading: "Hello, world!",
@@ -132,7 +135,7 @@ export default {
         buttonLink: "https://www.maxar.com",
         buttonText: "Learn more",
         backgroundImageUrl:
-          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg"
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/655/WorldView-Legion_6-satellites__1_.jpg",
       },
       headlineCopy1: {
         heading: "HEADLINE WITH COMPONENT & BUTTON",
@@ -142,7 +145,7 @@ export default {
         buttonEnabled: true,
         buttonExternal: true,
         buttonLink: "https://maxar.com",
-        buttonText: "Learn more"
+        buttonText: "Learn more",
       },
       headlineCopy2: {
         heading: "HEADLINE WITH COpy, no button",
@@ -152,7 +155,7 @@ export default {
         buttonEnabled: false,
         buttonExternal: true,
         buttonLink: "https://maxar.com",
-        buttonText: "Learn more"
+        buttonText: "Learn more",
       },
       headlineCopy3: {
         heading: "HEADLINE WITH NO BUTTON OR COPY",
@@ -162,7 +165,7 @@ export default {
         buttonEnabled: false,
         buttonExternal: true,
         buttonLink: "https://maxar.com",
-        buttonText: "Learn more"
+        buttonText: "Learn more",
       },
       masonryGrid: {
         cards: [
@@ -174,7 +177,7 @@ export default {
             heading: "New era in geospatial information and OEM data privacy",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkText: "Learn more"
+            linkText: "Learn more",
           },
           {
             link: "https://www.maxar.com",
@@ -184,7 +187,7 @@ export default {
             heading: "New era in geospatial information and OEM data privacy",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkText: "Learn more"
+            linkText: "Learn more",
           },
           {
             link: "https://www.maxar.com",
@@ -194,9 +197,9 @@ export default {
             heading: "New era in geospatial information and OEM data privacy",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkText: "Learn more"
-          }
-        ]
+            linkText: "Learn more",
+          },
+        ],
       },
       threeQuarters: {
         imageUrl:
@@ -209,7 +212,7 @@ export default {
         buttonEnabled: true,
         buttonLink: "https://maxar.com",
         linkIsExternal: true,
-        buttonText: "Learn more"
+        buttonText: "Learn more",
       },
       twoColumn: {
         headline: "Making history",
@@ -221,7 +224,7 @@ export default {
         buttonIsExternal: true,
         buttonText: "Learn more",
         imageUrl:
-          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg"
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/452/about_making_history.jpg",
       },
       threeCard: {
         cards: [
@@ -232,7 +235,7 @@ export default {
             heading: "What we’re doing",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkIsExternal: true
+            linkIsExternal: true,
           },
           {
             imageUrl:
@@ -241,7 +244,7 @@ export default {
             heading: "Where We’re Going",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkIsExternal: true
+            linkIsExternal: true,
           },
           {
             imageUrl:
@@ -250,9 +253,9 @@ export default {
             heading: "Open Data Program",
             copy:
               "<p>See how geospatial technology is key to moving us from level 3 to level 5, full autonomy.</p>",
-            linkIsExternal: true
-          }
-        ]
+            linkIsExternal: true,
+          },
+        ],
       },
       revealingStatCards: {
         cards: [
@@ -260,22 +263,22 @@ export default {
             imageUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/448/about_stats_1.png",
             answer: "5,800 employees in more than 30 locations",
-            question: "How many employees?"
+            question: "How many employees?",
           },
           {
             imageUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/449/about_stats_2.png",
             answer: "Customers in more than 70 countries",
-            question: "How many countries?"
+            question: "How many countries?",
           },
           {
             imageUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/450/about_stats_3.png",
             answer:
               "Collecting more than 3 million sq km of high-resolution imagery of Earth per day",
-            question: "How much imagery?"
-          }
-        ]
+            question: "How much imagery?",
+          },
+        ],
       },
       carousel: {
         sharedHeadingEnabled: true,
@@ -290,7 +293,7 @@ export default {
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
-            buttonText: "Learn more"
+            buttonText: "Learn more",
           },
           {
             imageUrl:
@@ -301,7 +304,7 @@ export default {
             buttonEnabled: true,
             buttonLink: "https://maxar.com",
             buttonIsExternal: true,
-            buttonText: "Learn more"
+            buttonText: "Learn more",
           },
           {
             imageUrl:
@@ -312,9 +315,9 @@ export default {
             buttonEnabled: true,
             buttonLink: "http://blog.maxar.com",
             buttonIsExternal: true,
-            buttonText: "Learn more"
-          }
-        ]
+            buttonText: "Learn more",
+          },
+        ],
       },
       fullColorCta: {
         heading: "Stay curious",
@@ -323,14 +326,14 @@ export default {
         buttonEnabled: true,
         buttonLink: "https://maxar.com",
         buttonExternal: true,
-        buttonText: "Learn more"
+        buttonText: "Learn more",
       },
       featuredResource: {
         title: "UI/UX Software Engineer (TS/SCI)",
         subtitle: "Herndon, VA",
         link: "https://maxar.com",
         linkExternal: true,
-        linkText: "Read more"
+        linkText: "Read more",
       },
       statBlock: {
         imageUrl:
@@ -338,29 +341,29 @@ export default {
         stats: [
           {
             stat: "60+ years",
-            description: "Space Infrastructure leadership"
+            description: "Space Infrastructure leadership",
           },
           {
             stat: "2,200",
-            description: "Collective years on orbit"
+            description: "Collective years on orbit",
           },
           {
             stat: "92",
-            description: "Geo communication satellites on orbit today"
+            description: "Geo communication satellites on orbit today",
           },
           {
             stat: "5",
-            description: "5 robotic arms on Mars"
+            description: "5 robotic arms on Mars",
           },
           {
             stat: "100+ PB",
-            description: "Archive of global imagery"
+            description: "Archive of global imagery",
           },
           {
             stat: "3M sq km",
-            description: "Collected each day"
-          }
-        ]
+            description: "Collected each day",
+          },
+        ],
       },
       iconBlock: {
         icons: [
@@ -370,7 +373,7 @@ export default {
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/460/rocket.png",
             copyEnabled: true,
             copy:
-              "Everything we do is to exceed the expectations and support the ambitions of our customers."
+              "Everything we do is to exceed the expectations and support the ambitions of our customers.",
           },
           {
             heading: "We work better together",
@@ -378,7 +381,7 @@ export default {
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/461/gear.png",
             copyEnabled: true,
             copy:
-              "We are an organization that values collaboration and diversity to create a better future."
+              "We are an organization that values collaboration and diversity to create a better future.",
           },
           {
             heading: "We stay curious",
@@ -386,9 +389,9 @@ export default {
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/462/magglass.png",
             copyEnabled: true,
             copy:
-              "We never stop working to discover the answers to the questions of tomorrow and to solve the most difficult problems."
-          }
-        ]
+              "We never stop working to discover the answers to the questions of tomorrow and to solve the most difficult problems.",
+          },
+        ],
       },
       twoColumnTallIcons: {
         imageUrl:
@@ -399,44 +402,44 @@ export default {
             iconUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/496/Path_603.jpg",
             copy:
-              "We competitively structure our salaries based on a number of factors including the responsibilities you will have as well as the current market conditions in the region."
+              "We competitively structure our salaries based on a number of factors including the responsibilities you will have as well as the current market conditions in the region.",
           },
           {
             heading: "Compehensive health plan",
             iconUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/497/Group_1092.png",
             copy:
-              "We offer comprehensive health coverage, health and wellness programs and on-site fitness centers (at some locations) to keep you and your family healthy. This includes medical, dental and vision insurance, along with flexible spending accounts, life insurance, pet insurance and more."
+              "We offer comprehensive health coverage, health and wellness programs and on-site fitness centers (at some locations) to keep you and your family healthy. This includes medical, dental and vision insurance, along with flexible spending accounts, life insurance, pet insurance and more.",
           },
           {
             heading: "401K retirement benefits",
             iconUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/498/Group_1093.png",
             copy:
-              "We help you prepare for your future by offering an employee match on your contributions up to 4 percent of your salary which is immediately vested."
+              "We help you prepare for your future by offering an employee match on your contributions up to 4 percent of your salary which is immediately vested.",
           },
           {
             heading: "Generous time off policy",
             iconUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/499/Group_1094.png",
             copy:
-              "We value a healthy work-life balance. We have a flexible leave policy so you can take the time you need off, when you need it, with your manager's approval. In addition, we have leave policies to support parental leave, military duty, bereavement, jury duty and disability."
+              "We value a healthy work-life balance. We have a flexible leave policy so you can take the time you need off, when you need it, with your manager's approval. In addition, we have leave policies to support parental leave, military duty, bereavement, jury duty and disability.",
           },
           {
             heading: "Tuition reimbursement & loan repayment",
             iconUrl:
               "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/500/Group_1095.png",
             copy:
-              "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry."
-          }
-        ]
+              "We are committed to continuous learning and employee development. Through our tuition reimbursement and student loan repayment program, you will have the financial support needed to enhance your skills, learn new ones, and stay on top of the industry.",
+          },
+        ],
       },
       fullWidthHeightImage: {
         imageUrl:
-          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg"
+          "https://maxarv2-cms-production.s3.amazonaws.com/uploads/image/image_value/451/constellation_beauty_shots_2.jpg",
       },
       wistiaVideo: {
-        wistiaId: "n0u0wusht0"
+        wistiaId: "n0u0wusht0",
       },
       multiLink: {
         links: [
@@ -445,40 +448,46 @@ export default {
             heading: "Explore",
             copy:
               "<p>Design, build and deploy resilient space infrastructure for any mission</p>",
-            isExternal: true
+            isExternal: true,
           },
           {
             link: "https://www.maxar.com/products/use-cases#connect",
             heading: "Connect",
             copy:
               "<p>Deploy cutting-edge systems for communications and data from or across space</p>",
-            isExternal: true
+            isExternal: true,
           },
           {
             link: "https://www.maxar.com/products/use-cases#access",
             heading: "Access",
             copy:
               "<p>Identify, understand and address change with accurate geospatial information</p>",
-            isExternal: true
+            isExternal: true,
           },
           {
             link: "https://www.maxar.com/products/use-cases#map",
             heading: "Map",
             copy:
               "<p>Create and customize maps with professional-grade imagery mosaics and information layers</p>",
-            isExternal: true
+            isExternal: true,
           },
           {
             link: "https://www.maxar.com/products/use-cases#analyze",
             heading: "Analyze",
             copy:
               "<p>Reveal patterns, detect objects and extract geospatial insight at scale</p>",
-            isExternal: true
-          }
-        ]
-      }
+            isExternal: true,
+          },
+        ],
+      },
+      mapNav: {
+        links: [
+          { title: "One", path: "/one" },
+          { title: "Two", path: "/two" },
+        ],
+      },
     };
-  }
+  },
 };
 </script>
 
