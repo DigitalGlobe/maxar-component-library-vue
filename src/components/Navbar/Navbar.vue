@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 nav {
   display: flex;
   flex-wrap: wrap;
