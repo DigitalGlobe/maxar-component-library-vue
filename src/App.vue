@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- TODO: split out maxar maps into a a specific, separate library -->
     <MaxarMap :config="mapConfig" />
   </div>
 </template>
@@ -30,26 +31,26 @@ export default {
         },
         layerToggles: {
           enabled: true,
-          toggles: {
-            "population": {
+          toggles: [
+            {
               name: "population",
               label: "Population",
               layers: ["population"],
               toggleColor: "#0e9797",
             },
-            "box": {
+            {
               name: "box",
               label: "Gold box",
               layers: ["hl-zoom-aoi-3kbt9t"],
               toggleColor: "#6b6965",
             },
-            "both": {
+            {
               name: "both",
               label: "Both",
               layers: ["population", "hl-zoom-aoi-3kbt9t"],
               toggleColor: "#1b2b66",
-            },
-          },
+            }
+          ],
         },
       },
     };

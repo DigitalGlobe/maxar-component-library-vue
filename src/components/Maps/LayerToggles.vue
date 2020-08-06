@@ -1,6 +1,6 @@
 <template>
   <div class="toggles">
-    <div v-for="state in toggles" :key="state.name" class="toggleItem">
+    <div v-for="(state, index) in toggles" :key="state.name" class="toggleItem">
       <label class="label-container"
         >{{ state.label }}
         <input
@@ -10,7 +10,7 @@
           name="layer"
           type="checkbox"
           checked
-          @click="handleToggle"/>
+          @click="handleToggle(index, $event)"/>
         <span class="checkmark"></span></label
       ><br />
     </div>
@@ -25,20 +25,19 @@ export default {
       default: null
     },
     toggles: {
-      type: Object,
+      type: Array,
       default: null
     }
   },
   methods: {
-    handleToggle(event) {
-      const name = event.target.id
+    handleToggle(index, event) {
       const visibility = event.target.checked
       if (visibility === true && this.map !== null) {
-        this.toggles[name].layers.forEach((layer) => {
+        this.toggles[index].layers.forEach((layer) => {
           this.map.setLayoutProperty(layer, 'visibility', 'visible')
         })
       } else if (visibility === false && this.map !== null) {
-        this.toggles[name].layers.forEach((layer) => {
+        this.toggles[index].layers.forEach((layer) => {
           this.map.setLayoutProperty(layer, 'visibility', 'none')
         })
       } else if (this.map === null) {
