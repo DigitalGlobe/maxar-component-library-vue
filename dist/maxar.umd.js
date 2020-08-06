@@ -12998,12 +12998,12 @@ function _objectSpread2(target) {
 
   return target;
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cf1e39f0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Maps/LayerToggles.vue?vue&type=template&id=e1473938&
-var LayerTogglesvue_type_template_id_e1473938_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"toggles"},_vm._l((_vm.toggles),function(state){return _c('div',{key:state.name,staticClass:"toggleItem"},[_c('label',{staticClass:"label-container"},[_vm._v(_vm._s(state.label)+" "),_c('input',{attrs:{"id":state.name,"data-toggle-color":state.toggleColor,"name":"layer","type":"checkbox","checked":""},domProps:{"value":state.label},on:{"click":_vm.handleToggle}}),_c('span',{staticClass:"checkmark"})]),_c('br')])}),0)}
-var LayerTogglesvue_type_template_id_e1473938_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cf1e39f0-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Maps/LayerToggles.vue?vue&type=template&id=4c4066b7&
+var LayerTogglesvue_type_template_id_4c4066b7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"toggles"},_vm._l((_vm.toggles),function(state,index){return _c('div',{key:state.name,staticClass:"toggleItem"},[_c('label',{staticClass:"label-container"},[_vm._v(_vm._s(state.label)+" "),_c('input',{attrs:{"id":state.name,"data-toggle-color":state.toggleColor,"name":"layer","type":"checkbox","checked":""},domProps:{"value":state.label},on:{"click":function($event){return _vm.handleToggle(index, $event)}}}),_c('span',{staticClass:"checkmark"})]),_c('br')])}),0)}
+var LayerTogglesvue_type_template_id_4c4066b7_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Maps/LayerToggles.vue?vue&type=template&id=e1473938&
+// CONCATENATED MODULE: ./src/components/Maps/LayerToggles.vue?vue&type=template&id=4c4066b7&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Maps/LayerToggles.vue?vue&type=script&lang=js&
 
@@ -13035,23 +13035,22 @@ var LayerTogglesvue_type_template_id_e1473938_staticRenderFns = []
       default: null
     },
     toggles: {
-      type: Object,
+      type: Array,
       default: null
     }
   },
   methods: {
-    handleToggle: function handleToggle(event) {
+    handleToggle: function handleToggle(index, event) {
       var _this = this;
 
-      var name = event.target.id;
       var visibility = event.target.checked;
 
       if (visibility === true && this.map !== null) {
-        this.toggles[name].layers.forEach(function (layer) {
+        this.toggles[index].layers.forEach(function (layer) {
           _this.map.setLayoutProperty(layer, 'visibility', 'visible');
         });
       } else if (visibility === false && this.map !== null) {
-        this.toggles[name].layers.forEach(function (layer) {
+        this.toggles[index].layers.forEach(function (layer) {
           _this.map.setLayoutProperty(layer, 'visibility', 'none');
         });
       } else if (this.map === null) {
@@ -13078,8 +13077,8 @@ var LayerTogglesvue_type_style_index_0_lang_scss_ = __webpack_require__("f6ef");
 
 var LayerToggles_component = normalizeComponent(
   Maps_LayerTogglesvue_type_script_lang_js_,
-  LayerTogglesvue_type_template_id_e1473938_render,
-  LayerTogglesvue_type_template_id_e1473938_staticRenderFns,
+  LayerTogglesvue_type_template_id_4c4066b7_render,
+  LayerTogglesvue_type_template_id_4c4066b7_staticRenderFns,
   false,
   null,
   null,
