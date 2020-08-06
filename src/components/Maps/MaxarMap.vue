@@ -1,10 +1,11 @@
 <template>
   <div ref="map" class="map" :style="`height: ${height}vh; width: ${width}%`">
-    <slot></slot>
+    <LayerToggles v-if="config.layerToggles.enabled" :toggles="config.layerToggles.toggles" :map="map" />
   </div>
 </template>
 
 <script>
+import LayerToggles from "./LayerToggles";
 export default {
   props: {
     config: {
@@ -20,27 +21,29 @@ export default {
       default: 100,
     },
   },
+  components: {
+    LayerToggles,
+  },
   data() {
     return {
       map: null,
-    }
+    };
   },
   mounted() {
     this.map = new window.mapboxgl.Map({
       ...this.config.mapProperties,
       container: this.$refs.map,
-    })
-    this.map.on('load', () => {
+    });
+    this.map.on("load", () => {
       if (this.config.navigationControl.enabled) {
         const nav = new window.mapboxgl.NavigationControl({
           options: this.config.navigationControl,
-        })
-        this.map.addControl(nav, this.config.navigationControl.position)
+        });
+        this.map.addControl(nav, this.config.navigationControl.position);
       }
-      this.$emit('mapbox-loaded', this.map)
-    })
+    });
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
