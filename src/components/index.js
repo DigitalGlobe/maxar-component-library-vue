@@ -18,8 +18,6 @@ import WistiaVideo from "./WistiaVideo.vue";
 import MultiLink from "./MultiLink.vue";
 import Navbar from "./Navbar/Navbar.vue";
 import HomeHero from "./HomeHero.vue";
-import MaxarMap from "./Maps/MaxarMap.vue";
-import MapNav from "./Maps/MapNav.vue";
 
 const Maxar = {
     Hero,
@@ -41,8 +39,6 @@ const Maxar = {
     MultiLink,
     Navbar,
     HomeHero, 
-    MaxarMap,
-    MapNav
 }
 
 Object.keys(Maxar).forEach(name => {

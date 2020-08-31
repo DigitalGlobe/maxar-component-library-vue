@@ -2,8 +2,6 @@
 
 The Maxar Creative Services Component Library, built with [Vue.js](https://vuejs.org/). 
 
-[Demo site](https://maxar-vue-components.netlify.com/)
-
 ## Development
 
 ### Project setup
