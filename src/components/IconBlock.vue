@@ -34,93 +34,98 @@ $IconGridComponent__breakpoint: 980px;
     max-width: $mid_content_width;
     width: 100%;
     padding: 0 $half_space;
-    @media (min-width: $IconGridComponent__breakpoint) {
+
+    @media (min-width: 520px) {
       padding: 0 0 0 0;
+      width: 520px;
     }
+
     @media (min-width: 1281px) {
-      justify-content: space-between;
-      &.icon__count_1,
-      &.icon__count_2 {
-        justify-content: center;
-      }
+      justify-content: center;
+      flex-direction: row;
+      width: 100%;
     }
   }
 
   &__cell {
     padding: $mobile_side_space 0 10px 0;
     flex-basis: 100%;
-    width: 100%;
+    width: 50%;
     -ms-flex: auto;
     box-sizing: border-box;
     position: relative;
+
     &:first-child {
       padding: 0 0 0 0;
     }
+
     &:last-child {
       padding: $mobile_side_space 0 0 0;
     }
+
     &:nth-child(1) {
       padding: 0 0 0 0;
-    }
-
-    @media (min-width: $IconGridComponent__breakpoint) {
-      padding: $mobile_side_space 0 10px 0;
-      min-width: 50%;
-      max-width: 55%;
-      flex-basis: 100%;
-
-      &:first-child {
-        padding: 0 0 0 0;
-      }
-      &:last-child {
-        padding: $mobile_side_space 0 0 0;
-      }
-      &:nth-child(1) {
-        padding: 0 0 0 0;
-      }
-
-      @include with-count(1) {
-        flex-basis: 100%;
-      }
     }
 
     @media (min-width: 1281px) {
       padding: $base_space $base_space 0px $base_space;
       min-width: 25%;
-      flex-basis: 33.33%;
+      flex-basis: 25%;
+
       &:first-child,
       &:last-child {
         padding: $base_space $base_space 0px $base_space;
-      }
-      @include with-count(1) {
-        min-width: 25%;
-        flex-basis: 33.33%;
-      }
-      @include with-count(2) {
-        min-width: 25%;
-        flex-basis: 33.33%;
       }
     }
   }
 
   img {
+    padding-bottom: $half_space;
+  }
+
+  .IconGridComponent__fullWidth {
+    width: 280px;
+    max-height: 128px;
+    max-width: 100%;
+  }
+
+  .IconGridComponent__icon {
     height: 78px;
     width: 78px;
   }
-}
 
-// Style component form here
-.component_form.icon_grid_components {
-  display: flex;
-  flex-direction: column;
+  &.vertical {
+    .IconGridComponent__cell {
+      border: 3px solid $color_primary_brand;
+      margin-left: $half_space;
+      margin-right: $half_space;
+      padding: $base_space $half_space $base_space $half_space;
+      min-width: 19%;
+      flex-basis: 19%;
+      text-align: center;
 
-  input[type="text"] {
-    width: 100%;
-  }
+      @media (max-width: 1280px) {
+        margin: $base_space 0 0 0;
+        min-width: 50%;
+        flex-basis: 70%;
 
-  .icongrid_row {
-    display: flex;
-    flex-direction: row;
+        &:first-child {
+          margin: 0 0 0 0;
+        }
+
+        &:last-child {
+          margin: $base_space 0 0 0;
+        }
+
+        &:nth-child(1) {
+          margin: 0 0 0 0;
+        }
+      }
+
+      h3 {
+        padding-bottom: $half_space;
+      }
+    }
   }
 }
 </style>
